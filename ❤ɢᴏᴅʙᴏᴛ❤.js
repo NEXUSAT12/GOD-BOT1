@@ -6578,7 +6578,7 @@ let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "
 GODincBOT.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' })
 }
 break
-case 'accountsell' case 'coursesell' :{
+case 'accountsell' : case 'coursesell' :{
 let im = ["https://media.tenor.com/a3Pfq5kkcYIAAAAM/dinheiro-money.gif" ]
 let toa = `TELEGRAM CHANNEL : https://t.me/HACKERGuru2\n\nWHATSAPP GROUP : https://chat.whatsapp.com/H2yL8sXuUsd2K1wuYydjnb `
 GODincbot.sendMessage(m.chat, {image:{url:im}, caption:toa}, {quoted}) 
