@@ -2,7 +2,7 @@
   "name": "GOD-BOT_MD",
   "description": "whatsapp md bot build with nodejs",
   "repository": "https://github.com/NEXUSAT12/GOD-BOT1",
-  "logo": "https://pbs.twimg.com/media/FO7fojOakAAyYgt?format=jpg&name=900x900",
+  "logo": "./GODMEDIA/theme/GODBOTPIC.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
   "buildpacks": [
     {
