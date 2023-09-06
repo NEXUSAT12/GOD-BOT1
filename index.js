@@ -52,7 +52,7 @@ require('./index.js')
 nocache('../index.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
 
 async function GodBotIncBot() {
-	const {  saveCreds, state } = await useMultiFileAuthState(`./${sessionName}`)
+	const {  saveState, state } = await useMultiFileAuthState(`./session/${sessionName}.json`)
     	const GodBotInc = GodBotIncConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
