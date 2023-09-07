@@ -52,7 +52,7 @@ Scan qr code from the above button, u can pay through GooglePay, Paytm, PhonePe 
 - FORK THE REPOSITORY [Here](https://github.com/DGXeon/CheemsBot-MD8/fork)
 
 ## `Scan QR Code For Session`
-[![Cheems Bot](https://repl.it/badge/github/quiec/whatsasena)]()
+[![Cheems Bot](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@NEXUSAT12/GOD-BOT-1-MULTI-AUTH-SESSION-GENERATOR)
 
 ## ` BUILDPACKS`
 
