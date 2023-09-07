@@ -52,7 +52,7 @@ require('./index.js')
 nocache('../index.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
 
 async function GodBotIncBot() {
-	const {  saveCreds, state } = await useMultiFileAuthState(`./${sessionName}`)
+	const {  saveState, state } = await useMultiFileAuthState(`./${sessionName}`)
     	const GodBotInc = GodBotIncConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
@@ -128,7 +128,7 @@ try{
 await delay(5555) 
 start('2',colors.bold.white('\n\nWaiting for New Messages..'))
 
-GodBotInc.ev.on('creds.update', await saveCreds)
+GodBotInc.ev.on('creds.update', await saveState)
 
     // Anti Call
     GodBotInc.ev.on('call', async (GodPapa) => {
