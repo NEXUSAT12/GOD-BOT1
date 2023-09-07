@@ -54,6 +54,8 @@ Scan qr code from the above button, u can pay through GooglePay, Paytm, PhonePe 
 ## `Scan QR Code For Session`
 [![Cheems Bot](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@NEXUSAT12/GOD-BOT-1-MULTI-AUTH-SESSION-GENERATOR)
 
+## `PLEASE SCAN THE QR CODE AND UPLOAD THE SESSION AS SESSION.JSON  IF HAVE ANY ISSUE CONTACT ME`
+
 ## ` BUILDPACKS`
 
 ```
