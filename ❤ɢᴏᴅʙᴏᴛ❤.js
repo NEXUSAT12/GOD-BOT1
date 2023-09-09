@@ -1489,31 +1489,31 @@ case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
             let me = m.sender
             let timestampe = speed()
             let latensie = speed() - timestampe
-            GODezy = `┌─❖
+            GODezy = `╭─❖
 │ Hi 👋 
-└┬❖  ${pushname} 
-┌┤✑  ${GODytimewisher} 😄
-│└────────────┈ ⳹
+╰┬❖  ${pushname} 
+╭┤✑  ${GODytimewisher} 😄
+│╰────────────┈ ⳹
 │
-└─ 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊        
+╰─ 𝘽𝙊𝙏 𝙄𝙉𝙁𝙊 ╮
+╭──────────╯
 │𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
 │𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
 │𝗕𝗼𝘁 : ${global.botname}
 │𝗢𝘄𝗻𝗲𝗿 𝗡𝗼: ${ownernumber}
 │𝗣𝗿𝗲𝗳𝗶𝘅 :  NO-PREFIX 
 │𝗠𝗼𝗱𝗲 : ${GODincBOT.public ? 'Public' : `Self`}
-│𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
-│𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
 │
-└─ 𝙐𝙎𝙀𝙍 𝙄𝙉𝙁𝙊 
+╰─ 𝙐𝙎𝙀𝙍 𝙄𝙉𝙁𝙊 
 │𝗡𝗮𝗺𝗲 : ${pushname}
 │𝗡𝘂𝗺𝗯𝗲𝗿 : @${me.split('@')[0]}
 │𝗣𝗿𝗲𝗺𝗶𝘂𝗺 : ${isPrem ? '✅' : `❌`}
 │
-└─ 𝙏𝙄𝙈𝙀 𝙄𝙉𝙁𝙊 
+╰─ 𝙏𝙄𝙈𝙀 𝙄𝙉𝙁𝙊─╮
+╭──────────╯
 │𝗧𝗶??𝗲 : ${xtime}
 │𝗗𝗮𝘁𝗲 : ${xdate}
-└┬────────────┈ ⳹
+╰┬────────────┈ ⳹
    │✑  Please Type The *MENU*
    │✑  Given *BELOW*
 ┌└─────────────┈ ⳹
@@ -1663,6 +1663,28 @@ mentionedJid:[sender],
 })
 }
 break
+case 'premiummenu': {
+var unicorn = await getBuffer(picak+'PREMIUM MENU')
+sendGODincBOTMessage(from, { 
+text: `Hi @${sender.split("@")[0]}\n\n${premiummenu(prefix)}`,
+mentions:[sender],
+contextInfo:{
+mentionedJid:[sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"renderLargerThumbnail": true,
+"title": botname, 
+"containsAutoReply": true,
+"mediaType": 1, 
+"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"mediaUrl": `${wagc}`,
+"sourceUrl": `${wagc}`
+}
+}
+})
+}
+break
+		
 case 'funmenu': {
 var unicorn = await getBuffer(picak+'Fun Menu')
 sendGODincBOTMessage(from, { 
@@ -1915,27 +1937,7 @@ mentionedJid:[sender],
 })
 }
 break
-case 'bugmenu': {
-var unicorn = await getBuffer(picak+'Bug Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${bugmenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
-}
-break
+
 case 'sound1':
 case 'sound2':
 case 'sound3':
@@ -5007,6 +5009,8 @@ if (/hacker/.test(command)) heyy = await fetchJson('https://raw.githubuserconten
 if (/hestia/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/hestia.json')
 if (/husbu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/husbu.json')
 if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/inori.json')
+if (/inori/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/NEXUSAT12/XBOTmedia/master/sanatani.json') 
+	
 if (/islamic/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/islamic.json')
 if (/isuzu/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/isuzu.json')
 if (/itachi/.test(command)) heyy = await fetchJson('https://raw.githubusercontent.com/DGxeon/Xeonmedia/master/itachi.json')
@@ -6232,6 +6236,7 @@ console.log(err);
 replygcGOD("Sorry, there seems to be an error :"+ err);
 }
 break
+		
 case 'myip': {
         if (!GODTheCreator) return GODStickOwner()
         if (m.isGroup) return GODStickPrivate()
@@ -6575,7 +6580,7 @@ case 'xbugr':{ //crashes both mod and playstore wa
 if (!GODTheCreator) return GODStickOwner()
 const { GODorwot } = require('./XBug/GODbut2')
 let reactionMessage = proto.Message.ReactionMessage.create({ key: m.key, text: "" })
-GODincBOT.relayMessage(m.chat, { reactionMessage }, { messageId: '🦄' })
+GODincBOT.relayMessage(m.chat, { reactionMessage }, { messageId: '👑' })
 }
 break
 case 'accountsell' : case 'coursesell' :{
