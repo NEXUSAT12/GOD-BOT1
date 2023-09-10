@@ -3326,11 +3326,11 @@ case 'yts': case 'ytsearch': {
             break
 case 'play':  case 'song': {
 if (!text) return replygcGOD(`Example : ${prefix + command} anime whatsapp status`)
-const GODplaymp3 = require('./lib/ytdl2')
+const YT = require('./lib/ytdl2')
 let yts = require("yt-search")
         let search = await yts(text)
         let anup3k = search.videos[0]
-const pl= await GODplaymp3.mp3(anup3k.url)
+const pl = await YT.mp3(anup3k.url)
 await GODincBOT.sendMessage(m.chat,{
     audio: fs.readFileSync(pl.path),
     fileName: anup3k.title + '.mp3',
