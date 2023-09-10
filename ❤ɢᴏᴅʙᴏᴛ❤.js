@@ -3326,7 +3326,7 @@ case 'yts': case 'ytsearch': {
             break
 case 'play':  case 'song': {
 if (!text) return replygcGOD(`Example : ${prefix + command} anime whatsapp status`)
-const YT = require('./lib/ytdl2')
+const YT = require('./lib/ytdlcore')
 let yts = require("youtube-yts")
 let search = await yts(text)
 let anup3k = search.videos[0]
@@ -3349,10 +3349,10 @@ await GODincBOT.sendMessage(m.chat,{
 await fs.unlinkSync(pl.path)
 }
 break
-case "ytmp3": case "ytaudio": //credit: Ray Senpai â¤ï¸ https://github.com/EternityBots/Nezuko
-const GODaudp3 = require('./lib/ytdl2')
+case "ytmp3": case "ytaudio": { //credit: Ray Senpai â¤ï¸ https://github.com/EternityBots/Nezuko
 if (args.length < 1 || !isUrl(text) || !GODaudp3.isYTUrl(text)) return replygcGOD(`Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
-const audio=await GODaudp3.mp3(text)
+const YT=require('./lib/ytdlcore')
+const audio = await YT.mp3(text)
 await GODincBOT.sendMessage(m.chat,{
     audio: fs.readFileSync(audio.path),
     mimetype: 'audio/mp4', ptt: true,
@@ -3364,16 +3364,16 @@ await GODincBOT.sendMessage(m.chat,{
             mediaType:2,
             mediaUrl:text,
         }
-
     },
 },{quoted:m})
 await fs.unlinkSync(audio.path)
+}
 break
 case 'ytmp4': case 'ytvideo': {
-const GODvidoh = require('./lib/ytdl2')
+const YT = require('./lib/ytdlcore')
 if (args.length < 1 || !isUrl(text) || !GODvidoh.isYTUrl(text)) replygcGOD(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
-const vid=await GODvidoh.mp4(text)
-const ytc=`
+const vid = await YT.mp4(text)
+const ytc = `
 *${themeemoji}Tittle:* ${vid.title}
 *${themeemoji}Date:* ${vid.date}
 *${themeemoji}Duration:* ${vid.duration}
@@ -3384,18 +3384,6 @@ await GODincBOT.sendMessage(m.chat,{
 },{quoted:m})
 }
 break
-case 'ytvxxx': case 'ytmp4xxx': case 'mp4xxx':{
-if (!text) return replygcGOD('Enter the link!!!')
-GODStickWait()
-downloadMp4(text)
-}
-break
-case 'ytaxxx': case 'ytmp3xxx': case 'mp3xxx':{
-if (!text) return replygcGOD('Enter the link!!!')
-GODStickWait()
-downloadMp3(text)
-}
-break  
 case 'getcase':
 if (!GODTheCreator) return GODStickOwner()
 const getCase = (cases) => {
