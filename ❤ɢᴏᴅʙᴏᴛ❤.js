@@ -3314,8 +3314,8 @@ break
 case 'search':
 case 'yts': case 'ytsearch': {
                 if (!text) return replygcGOD(`Example : ${prefix + command} story wa anime`)
-                let search1 = require("youtube-yts")
-                let search = await search1(text)
+                let yts = require("youtube-yts")
+                let search = await yts(text)
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
@@ -3327,8 +3327,8 @@ case 'yts': case 'ytsearch': {
 case 'play':  case 'song': {
 if (!text) return replygcGOD(`Example : ${prefix + command} anime whatsapp status`)
 const YT = require('./lib/ytdl2')
-let search1 = require("youtube-yts")
-let search = await search1(text)
+let yts = require("youtube-yts")
+let search = await yts(text)
 let anup3k = search.videos[0]
 const pl = await YT.mp3(anup3k.url)
 await GODincBOT.sendMessage(m.chat,{
