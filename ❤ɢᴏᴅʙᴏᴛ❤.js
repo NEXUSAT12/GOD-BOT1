@@ -5896,10 +5896,11 @@ replygcGOD("Sorry, there seems to be an error :"+ error.message);
 }
 }
 break
-case "aimage": {
-if (global.keyopenai === '') return replygcGOD("Apikey limit exceeded");        
-if (!text) return replygcGOD(`Generate image from AI.\n\nExample:\n${prefix + command} man riding horse`);
-const { Configuration, OpenAIApi } = require('openai');
+case "aimage":
+try {
+if (global.keyopenai === '') return replygcGOD("Apikey limit exceeded");
+if (!q) return replygcGOD(`Generate image from AI.\n\nExample:\n${prefix + command} man riding horse`)
+const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
 apiKey: global.keyopenai,
 });
@@ -5909,10 +5910,11 @@ prompt: text,
 n: 1,
 size: "512x512",
 });
-GODincBOT.sendImage(from, response.data.data[0].url, q, m);
+//console.log(response.data.data[0].url)
+GODincBOT.sendImage(from, response.data.data[0].url, text, m);
 } catch (err) {
 console.log(err);
-replygcGOD("Sorry, there seems to be an error: " + err);
+replygcGOD("Sorry, there seems to be an error :"+ err);
 }
 break
 case 'myip': {
