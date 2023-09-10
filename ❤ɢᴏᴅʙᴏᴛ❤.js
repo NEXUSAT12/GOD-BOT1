@@ -5866,7 +5866,7 @@ const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
 return replygcGOD(`${themeemoji} *Fact:* ${data.fact}\n`)   
 }
 break
-case 'ai': case 'openai':{
+case 'ai': case 'openai':{ 
 if (global.keyopenai === '') return replygcGOD("Api key limi exceeded");
 if (!q) return replygcGOD(`Chat with AI.\n\nExample:\n${prefix + command} What is coding`)
 const { Configuration, OpenAIApi } = require('openai')
@@ -5892,7 +5892,6 @@ console.log(`${error.response.status}\n\n${error.response.data}`);
 } else {
 console.log(error);
 replygcGOD("Sorry, there seems to be an error :"+ error.message);
-}
 }
 break
 case "aimage": {
