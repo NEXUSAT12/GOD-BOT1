@@ -48,7 +48,7 @@ GOD Bot Multi Device is a automated whatsapp bot created by <a href="https://git
 
 # Setup For Deployment 👇
 
-- FORK THE REPOSITORY [Here](https://github.com/DGXeon/CheemsBot-MD8/fork)
+- FORK THE REPOSITORY [Here](https://github.com/NEXUSAT12/GOD-BOT1/fork)
 
 ## `Scan QR Code For Session`
 [![GOD Bot](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@NEXUSAT12/GOD-BOT-1-MULTI-AUTH-SESSION-GENERATOR)
@@ -111,3 +111,6 @@ npm start
 ```bash
 npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 ```
+
+
+## `THANKS FOR `
