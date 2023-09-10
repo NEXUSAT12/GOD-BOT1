@@ -5866,32 +5866,25 @@ const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
 return replygcGOD(`${themeemoji} *Fact:* ${data.fact}\n`)   
 }
 break
-case 'ai': case 'openai':{ 
-if (global.keyopenai === '') return replygcGOD("Api key limi exceeded");
-if (!q) return replygcGOD(`Chat with AI.\n\nExample:\n${prefix + command} What is coding`)
+case "aimage":
+try {
+if (global.keyopenai === '') return replygcGOD("Apikey limit exceeded");
+if (!text) return replygcGOD(`Generate image from AI.\n\nExample:\n${prefix + command} man riding horse`)
 const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
 apiKey: global.keyopenai,
 });
 const openai = new OpenAIApi(configuration);
-const response = await openai.createCompletion({
-model: "text-davinci-003",
-prompt: q,
-temperature: 0.3,
-max_tokens: 2000,
-top_p: 1.0,
-frequency_penalty: 0.0,
-presence_penalty: 0.0,
+const response = await openai.createImage({
+prompt: text,
+n: 1,
+size: "512x512",
 });
-replygcGOD(`${response.data.choices[0].text}`);
-} catch (error) {
-if (error.response) {
-console.log(error.response.status);
-console.log(error.response.data);
-console.log(`${error.response.status}\n\n${error.response.data}`);
-} else {
-console.log(error);
-replygcGOD("Sorry, there seems to be an error :"+ error.message);
+//console.log(response.data.data[0].url)
+GODincBOT.sendImage(from, response.data.data[0].url, text, m);
+} catch (err) {
+console.log(err);
+replygcGOD("Sorry, there seems to be an error :"+ err);
 }
 break
 case "aimage": {
