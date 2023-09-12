@@ -1,12 +1,12 @@
-
-## ╭━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╮
-    
-## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar&duration=5316&pause=1064&color=F70D0C&width=435&lines=WELCOME+TO+THE+GOD-BOT;POWERED+BY+NEXUS;HOPE+YOU+ENJOY+THE+BOT+;AND+DONT+FORGET+TO+FOLLOW)](https://git.io/typing-svg)
-
-## ╰━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╯
+ 
+                      ╭━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╮
+                     
 <p align="center">
 <img src="./GODMEDIA/theme/GODBOTPIC.jpg" width="540" height="280" />
-</p>
+</p>    
+
+                      ╰━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╯
+
 
 <p align="center">
 GOD Bot Multi Device is a automated whatsapp bot created by <a href="https://github.com/NEXUSAT12" target="_blank">NEXUS</a> using <a href="https://github.com/adiwajshing/Baileys" target="_blank">Baileys</a> and <a href="https://github.com/nodejs" target="_blank">Nodejs</a>. Dont forget to give a star bro.
@@ -61,8 +61,8 @@ GOD Bot Multi Device is a automated whatsapp bot created by <a href="https://git
 ## ` BUILDPACKS`
 
 ```
-https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
-https://github.com/clhuang/heroku-buildpack-webp-binaries.git
+             https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
+             https://github.com/clhuang/heroku-buildpack-webp-binaries.git
 ```
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/NEXUSAT12/GOD-BOT1/)
