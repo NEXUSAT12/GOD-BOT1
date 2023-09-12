@@ -1,6 +1,9 @@
 
+## ╭━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╮
+    
+## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar&duration=5316&pause=1064&color=F70D0C&width=435&lines=WELCOME+TO+THE+GOD-BOT;POWERED+BY+NEXUS;HOPE+YOU+ENJOY+THE+BOT+;AND+DONT+FORGET+TO+FOLLOW)](https://git.io/typing-svg)
 
-<h1 align="center">𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏ꫂ<br></h1>
+## ╰━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╯
 <p align="center">
 <img src="./GODMEDIA/theme/GODBOTPIC.jpg" width="540" height="280" />
 </p>
@@ -103,7 +106,7 @@ apt apt install ffmpeg
 apt apt install libwebp 
 apt apt install imagrmagick
 apt install bash
-git clone [https://github.com/DGXeon/CheemsBot-MD8](https://github.com/NEXUSAT12/GOD-BOT1)
+git clone [https://github.com/NEXUSAT12/GOD-BOT1](https://github.com/NEXUSAT12/GOD-BOT1)
 cd GOD-BOT1
 npm start
 ```
