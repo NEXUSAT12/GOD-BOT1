@@ -1536,7 +1536,6 @@ case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 │❏.textpromenu
 │❏.ephoto360menu
 │❏.animemenu
-│❏.nsfwmenu
 │❏.randomphotomenu
 │❏.randomvideomenu
 │❏.stickermenu
@@ -1559,7 +1558,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": thum,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1601,7 +1600,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1622,7 +1621,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1643,7 +1642,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1664,7 +1663,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1685,7 +1684,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1707,7 +1706,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1728,7 +1727,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail":log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1749,7 +1748,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1770,7 +1769,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1791,7 +1790,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1812,7 +1811,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1833,7 +1832,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1854,7 +1853,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1875,7 +1874,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1896,7 +1895,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1917,7 +1916,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1938,7 +1937,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
