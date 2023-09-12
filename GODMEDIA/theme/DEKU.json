@@ -4,7 +4,7 @@
     "AUTHOR": "NEXUS",
     "LANGUAGE": "English",
     "THEMECODE": "DEKU",
-        "global": {
+        "theme": {
             "pic1": "https://i.pinimg.com/564x/6f/9c/59/6f9c59c71edb09bae4436abe43d763e3.jpg",
             "pic2": "https://i.pinimg.com/564x/32/20/e1/3220e14017dac711b4da5606a729c1e0.jpg",
             "pic3": "https://i.pinimg.com/564x/35/ff/1e/35ff1edad1b3d7c1bd7e622b9d8ccf15.jpg",
@@ -17,4 +17,3 @@
             "text": "Task Failed"
         }
     }
-  }
