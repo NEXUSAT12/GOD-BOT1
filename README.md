@@ -1,11 +1,11 @@
  
-                      ╭━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╮
+                            ╭━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╮
                      
 <p align="center">
 <img src="./GODMEDIA/theme/GODBOTPIC.jpg" width="540" height="280" />
 </p>    
 
-                      ╰━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╯
+                            ╰━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╯
 
 
 <p align="center">
