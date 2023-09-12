@@ -1,11 +1,10 @@
- 
-                            ╭━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╮
-                     
-<p align="center">
-<img src="./GODMEDIA/theme/GODBOTPIC.jpg" width="540" height="280" />
-</p>    
+<p align="center">  
+╭━━━━━━━━━━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━━━━━━━━━━╮     
 
-                            ╰━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━╯
+ 
+<img src="./GODMEDIA/theme/GODBOTPIC.jpg" width="540" height="280" />   
+
+</p> 
 
 
 <p align="center">
@@ -114,6 +113,7 @@ npm start
 ```bash
 npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
 ```
-
-
-## `THANKS FOR `
+<p align="center">
+  ╰━━━━━━━━━━━━≺👑 𝐆𝐎𝐃𝐁𝐎𝐓-𝗠𝗗 𝗩𝟏 👑≻━━━━━━━━━━━━╯
+</p> 
+  
