@@ -55,16 +55,11 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-
-var theme = ' ' 
-if (global.theme == "DEKU") theme = `${global.themeDeku }`
-if (global.theme == "LUFFY")theme = `${global.themeluffy}`
-
-const thum = {url:theme }
-const log0 = {url:theme }
-const err4r = {url:theme }
-const thumb = {url:theme } 
-
+let theme = JSON.parse(fs.readFileSynce('./GODMEDIA/theme/'+global.theme+'.json'))
+function pickRandom(list) {
+return list[Math.floor(list.length * Math.random())]
+}
+const log0 = pickRandom(theme)
 
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
 if (global.db) global.db = {
@@ -1579,7 +1574,7 @@ mentionedJid:[sender],
 "title": botname, 
 "containsAutoReply": true,
 "mediaType": 1, 
-"thumbnail": fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg"),
+"thumbnail": log0,
 "mediaUrl": `${wagc}`,
 "sourceUrl": `${wagc}`
 }
@@ -1609,7 +1604,7 @@ mentionedJid:[sender],
 }
 break
 case 'othermenu': {
-	var unicorn = await getBuffer(picak+'Other Menu')
+var unicorn = await getBuffer(picak+'Other Menu')
 sendGODincBOTMessage(from, { 
 text: `Hi @${sender.split("@")[0]}\n\n${othermenu(prefix)}`,
 mentions:[sender],
@@ -1823,27 +1818,6 @@ case 'ephoto360menu': {
 var unicorn = await getBuffer(picak+'Photo360 Menu')
 sendGODincBOTMessage(from, { 
 text: `Hi @${sender.split("@")[0]}\n\n${ephoto360menu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
-}
-break
-case 'nsfwmenu': {
-var unicorn = await getBuffer(picak+'Anime NSFW Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${nsfwmenu(prefix)}`,
 mentions:[sender],
 contextInfo:{
 mentionedJid:[sender],
