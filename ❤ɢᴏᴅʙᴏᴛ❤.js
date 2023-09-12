@@ -60,6 +60,9 @@ function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
 const log0 = pickRandom(theme)
+const thum = pickRandom(theme)
+const thumb = pickRandom(theme)
+const err4r = pickRandom(theme)
 
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
 if (global.db) global.db = {
