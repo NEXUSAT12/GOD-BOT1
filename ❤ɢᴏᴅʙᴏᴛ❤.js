@@ -65,7 +65,7 @@ const pic5 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic5.jpg')
 const pic6 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic6.jpg')
 const pic7 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic7.jpg')
 
-const theme = [pic1,pic2,pic3,pic4,pic5,pic6,pic7]
+let  theme = { pic1, pic2, pic3, pic4, pic5, pic6, pic7 }
 
 const log0  = theme[Math.floor(Math.random() * theme.length)]
 const thum  = pickRandom(theme)
