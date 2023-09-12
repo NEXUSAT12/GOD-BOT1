@@ -54,24 +54,35 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-function pickRandom(list) {
-return list[Math.floor(Math.random() * list.length)]
+
+// const pic1 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic1.jpg')
+// const pic2 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic2.jpg')
+// const pic3 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic3.jpg')
+// const pic4 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic4.jpg')
+// const pic5 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic5.jpg')
+// const pic6 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic6.jpg')
+// const pic7 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic7.jpg')
+
+// let  theme = [ pic1, pic2, pic3, pic4, pic5, pic6, pic7 ]
+
+const directoryPath = './GODMEDIA/'+global.theme;
+
+function theme(directoryPath) {
+const files = fs.readdirSync(directoryPath);
+const imageFiles = files.filter(file => {
+const ext = path.extname(file).toLowerCase();
+return ext === '.jpg';
+});
+const randomImageFile = imageFiles[Math.floor(Math.random() * imageFiles.length)];
+const imagePath = path.join(directoryPath, randomImageFile);
+return = fs.readFileSync(imagePath);
 }
-const pic1 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic1.jpg')
-const pic2 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic2.jpg')
-const pic3 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic3.jpg')
-const pic4 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic4.jpg')
-const pic5 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic5.jpg')
-const pic6 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic6.jpg')
-const pic7 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic7.jpg')
 
-let  theme = { pic1, pic2, pic3, pic4, pic5, pic6, pic7 }
-
-const log0  = theme[Math.floor(Math.random() * theme.length)]
-const thum  = pickRandom(theme)
-const thumb = pickRandom(theme)
-const err4r = pickRandom(theme)
-
+const log0  = theme
+const thum  = theme
+const thumb = theme
+const err4r = theme
+}
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
 if (global.db) global.db = {
 sticker: {},
