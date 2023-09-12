@@ -82,7 +82,7 @@ const log0  = theme
 const thum  = theme
 const thumb = theme
 const err4r = theme
-}
+
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
 if (global.db) global.db = {
 sticker: {},
