@@ -55,10 +55,21 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-let theme =  await fetchJSON('https://raw.githubusercontent.com/NEXUSAT12/GOD-BOT1/main/GODMEDIA/theme/'+global.theme+'.json')
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
+const  theme =  fetch('https://raw.githubusercontent.com/NEXUSAT12/GOD-BOT1/main/GODMEDIA/theme/'+global.theme+'.json')
+    .then(response => response.json())
+    .then(imageUrls => {
+        imageUrls.forEach(url => {
+            console.log(url);
+            const imgElement = document.createElement('img');
+            imgElement.src = url;
+            document.body.appendChild(imgElement);
+        });
+    })
+    .catch(error => console.error('Error fetching the JSON:', error));
+
 const log0  = pickRandom(theme)
 const thum  = pickRandom(theme)
 const thumb = pickRandom(theme)
