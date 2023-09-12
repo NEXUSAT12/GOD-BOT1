@@ -45,7 +45,7 @@ global.creator = "918130784851@s.whatsapp.net"
 global.prefa = ['','!','.','#','&']
 global.sessionName = 'session'
 global.hituet = 0
-global.theme = process.env.THEME || 'DEKU'
+global.theme = process.env.THEME || 'LUFFY',
 //media target
 global.defaultpp = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60' //default pp wa
 
