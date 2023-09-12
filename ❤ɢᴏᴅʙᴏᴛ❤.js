@@ -55,7 +55,7 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-let theme = await fetchJson('https://raw.githubusercontent.com/NEXUSAT12/GOD-BOT1/main/GODMEDIA/theme/'+global.theme+'.json') 
+let theme = fetchJson('https://raw.githubusercontent.com/NEXUSAT12/GOD-BOT1/main/GODMEDIA/theme/'+global.theme+'.json') 
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
