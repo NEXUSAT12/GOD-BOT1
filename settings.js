@@ -21,26 +21,26 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.owner = ['918130784851'] //ur owner number
-global.ownernomer = "918130784851" //ur owner number2
-global.ownername = "༺⟬☤⟭༻NEXUS༺⟬☤⟭༻" //ur owner name
-global.ytname = "YT: https://t.me/HACkERGuru2" //ur yt chanel name
+global.owner =  process.env.OWNER_NUMBER || '918130784851' //ur owner number
+global.ownernomer = process.env.OWNER_NUMBER || "918130784851" //ur owner number2
+global.ownername = process.env.OWNER_NAME === undefined ? '༺⟬☤⟭༻NEXUS༺⟬☤⟭༻' : process.env.OWNER_NAME,//ur owner name
+global.ytname = "TG: https://t.me/HACkERGuru2" //ur yt chanel name
 global.socialm = "GitHub: NEXUSAT12" //ur github or insta name
 global.location = "India, delhi , kalu sarai " //ur location
 
 //new
-global.botname = "ɢᴏᴅ ʙᴏᴛ ᴍᴅ ᴠ1"
-global.ownernumber = '918130784851'
-global.ownername = '༺⟬☤⟭༻NEXUS༺⟬☤⟭༻'
+global.botname =  process.env.BOT_NAME === undefined ? "ɢᴏᴅ ʙᴏᴛ ᴍᴅ ᴠ1" : process.env.BOT_NAME,
+global.ownernumber =  process.env.OWNER_NUMBER || '918130784851' 
+global.ownername = process.env.OWNER_NAME === undefined ? '༺⟬☤⟭༻NEXUS༺⟬☤⟭༻' : process.env.OWNER_NAME,
 global.ownerNumber = ["918130784851@s.whatsapp.net"]
 global.ownerweb = "https://superprofile.bio/lucifercreator"
 global.websitex = "https://youtu.be/L_SIk59QeAU"
 global.wagc = "https://chat.whatsapp.com/H2yL8sXuUsd2K1wuYydjnb"
-global.themeemoji = '🪀'
+global.themeemoji =  process.env.THEMEMOJI || "👑" 
 global.wm = "༺⟬☤⟭༻."
 global.botscript = 'https://github.com/NEXUSAT12/GOD-BOT1' //script link
-global.packname = "Sticker By"
-global.author = "༺⟬☤⟭༻NEXUS༺⟬☤⟭༻\n\n"
+global.packname =  process.env.PACK_NAME || 'MADE BY MASTER NEXUS',
+global.author = process.env.PACK_AUTHER || '༺⟬☤⟭༻NEXUS༺⟬☤⟭༻',
 global.creator = "918130784851@s.whatsapp.net"
 global.prefa = ['','!','.','#','&']
 global.sessionName = 'session'
