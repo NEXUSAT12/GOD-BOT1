@@ -11,7 +11,6 @@ const { fetchBuffer, buffergif } = require("./lib/myfunc2")
 const { rentfromGOD, conns } = require('./RentBot')
 const { uptotelegra } = require('./scrape/upload')
 const { msgFilter } = require('./lib/antispam')
-
 const { ytDonlodMp3, ytDonlodMp4, ytPlayMp3, ytPlayMp4, ytSearch } = require('./scrape/yt')
 const anon = require('./lib/menfess') 
 const scp1 = require('./scrape/scraper') 
@@ -58,17 +57,7 @@ let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
-const  theme =  fetch('https://raw.githubusercontent.com/NEXUSAT12/GOD-BOT1/main/GODMEDIA/theme/'+global.theme+'.json')
-    .then(response => response.json())
-    .then(imageUrls => {
-        imageUrls.forEach(url => {
-            console.log(url);
-            const imgElement = document.createElement('img');
-            imgElement.src = url;
-            document.body.appendChild(imgElement);
-        });
-    })
-    .catch(error => console.error('Error fetching the JSON:', error));
+const theme =  { pic1,pic2,pic3,pic4,pic5,pic6,pic7 } = require('./GODMEDIA/'+global.theme)
 
 const log0  = pickRandom(theme)
 const thum  = pickRandom(theme)
