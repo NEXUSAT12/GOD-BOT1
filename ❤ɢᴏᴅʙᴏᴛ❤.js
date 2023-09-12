@@ -1,5 +1,6 @@
 require('./settings')
 require('./lib/listmenu')
+require('./lib/theme.js')
 const { modul } = require('./module')
 const { os, axios, baileys, chalk, cheerio, child_process, crypto, cookie, FormData, FileType, fetch, fs, fsx, ffmpeg, Jimp, jsobfus, PhoneNumber, process, moment, ms, speed, syntaxerror, util, ytdl, googleTTS, maker } = modul
 const { exec, spawn, execSync } = child_process
@@ -55,6 +56,14 @@ let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
 
+var theme = ' ' 
+if (global.theme == "DEKU") theme = `${global.themeDeku }`
+if (global.theme == "LUFFY")theme = `${global.themeluffy}`
+
+const thum = {url:theme }
+const log0 = {url:theme }
+const err4r = {url:theme }
+const thumb = {url:theme } 
 
 
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
