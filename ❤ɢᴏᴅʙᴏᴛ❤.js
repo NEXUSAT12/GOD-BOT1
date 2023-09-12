@@ -55,7 +55,7 @@ let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
 function pickRandom(list) {
-return list[Math.floor(list.length * Math.random())]
+return list[Math.floor(Math.random() * list.length)]
 }
 const pic1 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic1.jpg')
 const pic2 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic2.jpg')
@@ -67,7 +67,7 @@ const pic7 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic7.jpg')
 
 const theme = [pic1,pic2,pic3,pic4,pic5,pic6,pic7]
 
-const log0  = pickRandom(theme)
+const log0  = theme[Math.floor(Math.random() * theme.length)]
 const thum  = pickRandom(theme)
 const thumb = pickRandom(theme)
 const err4r = pickRandom(theme)
