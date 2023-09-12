@@ -9,7 +9,7 @@
     "description": "Put the theme name you want to use. Avilable themes are DEKU,LUFFY",
     "value": "DEKU",
     "required": true 
-    
+    }   
   },
   "buildpacks": [
     {
