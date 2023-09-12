@@ -1550,382 +1550,93 @@ case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 │❏.premiummenu
 └─────────────────┈ ⳹`
             let ments = [ownernya, me, mark]        
-           GODincBOT.sendMessage(from, { 
-text: GODezy,
-contextInfo:{
-forwardingScore: 9999999,
-isForwarded: true, 
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": thum,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
+           GODincBOT.sendMessage(m.chat, { image: log0, caption: GODezy , mentions : ments}, { quoted: m })
 }
-}
-}, { quoted: m })
-           }
            break
 case 'allmenu': {
-var unicorn = await getBuffer(picak+'All Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${allmenu(prefix, hituet)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${allmenu(prefix, hituet)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'ownermenu': {
-var unicorn = await getBuffer(picak+'Owner Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${ownermenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${ownermenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'othermenu': {
-var unicorn = await getBuffer(picak+'Other Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${othermenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${othermenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'downloadmenu': {
-var unicorn = await getBuffer(picak+'Download Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${downloadmenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${downloadmenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'groupmenu': {
-var unicorn = await getBuffer(picak+'Group Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${groupmenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${groupmenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'premiummenu': {
-var unicorn = await getBuffer(picak+'PREMIUM MENU')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${premiummenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${premiummenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 		
 case 'funmenu': {
-var unicorn = await getBuffer(picak+'Fun Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${funmenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const text = `Hi @${sender.split("@")[0]}\n\n${funmenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'stalkermenu': {
-var unicorn = await getBuffer(picak+'Stalker Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${stalkermenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail":log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex =  `Hi @${sender.split("@")[0]}\n\n${stalkermenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'randomphotomenu': {
-var unicorn = await getBuffer(picak+'Random Pic Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${randphotomenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${randphotomenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'randomvideomenu': {
-var unicorn = await getBuffer(picak+'Random Vid Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${randvideomenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${randvideomenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'textpromenu': {
-var unicorn = await getBuffer(picak+'Textpro Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${textpromenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${textpromenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'photooxymenu': {
-var unicorn = await getBuffer(picak+'Photooxy Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${photooxymenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${photooxymenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'ephoto360menu': {
-var unicorn = await getBuffer(picak+'Photo360 Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${ephoto360menu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex =  `Hi @${sender.split("@")[0]}\n\n${ephoto360menu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'animemenu': {
-var unicorn = await getBuffer(picak+'Anime Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${animemenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const text =  `Hi @${sender.split("@")[0]}\n\n${animemenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'stickermenu': {
-var unicorn = await getBuffer(picak+'Sticker Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${stickermenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex =  `Hi @${sender.split("@")[0]}\n\n${stickermenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'databasemenu': {
-var unicorn = await getBuffer(picak+'Database Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${databasemenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const tex = `Hi @${sender.split("@")[0]}\n\n${databasemenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
-case 'aimenu': {
-var unicorn = await getBuffer(picak+'OpenAI Menu')
-sendGODincBOTMessage(from, { 
-text: `Hi @${sender.split("@")[0]}\n\n${aimenu(prefix)}`,
-mentions:[sender],
-contextInfo:{
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": log0,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+case 'aimenu': { 
+const tex = `Hi @${sender.split("@")[0]}\n\n${aimenu(prefix)}`
+GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 
