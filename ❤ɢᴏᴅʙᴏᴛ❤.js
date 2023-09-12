@@ -75,7 +75,7 @@ return ext === '.jpg';
 });
 const randomImageFile = imageFiles[Math.floor(Math.random() * imageFiles.length)];
 const imagePath = path.join(directoryPath, randomImageFile);
-return = fs.readFileSync(imagePath);
+return fs.readFileSync(imagePath);
 }
 
 const log0  = theme
