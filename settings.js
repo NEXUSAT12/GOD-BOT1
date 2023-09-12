@@ -1,6 +1,6 @@
 const chalk = require("chalk")
 const fs = require("fs")
-
+const env = require('dotenv')
 //aumto presence update
 global.autoTyping = false //auto tying in gc (true to on, false to off)
 global.autoRecord = false //auto recording (true to on, false to off)
