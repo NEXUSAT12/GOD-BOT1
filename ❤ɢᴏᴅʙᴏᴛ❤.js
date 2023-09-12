@@ -55,12 +55,12 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-const theme = await fetchJson('https://raw.githubusercontent.com/NEXUSAT12/GOD-BOT1/main/GODMEDIA/theme/'+global.theme+'.json') 
+const theme = fetch('https://raw.githubusercontent.com/NEXUSAT12/GOD-BOT1/main/GODMEDIA/theme/'+global.theme+'.json')
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
-const log0 = pickRandom(theme)
-const thum = pickRandom(theme)
+const log0  = pickRandom(theme)
+const thum  = pickRandom(theme)
 const thumb = pickRandom(theme)
 const err4r = pickRandom(theme)
 
@@ -106,10 +106,10 @@ try {
         const qmsg = (quoted.msg || quoted)
         const isMedia = /image|video|sticker|audio/.test(mime)
         const isImage = (type == 'imageMessage')
-		const isVideo = (type == 'videoMessage')
-		const isAudio = (type == 'audioMessage')
-		const isSticker = (type == 'stickerMessage')
-		const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
+	const isVideo = (type == 'videoMessage')
+	const isAudio = (type == 'audioMessage')
+	const isSticker = (type == 'stickerMessage')
+	const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
         const isQuotedLocation = type === 'extendedTextMessage' && content.includes('locationMessage')
         const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
         const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
@@ -138,7 +138,6 @@ try {
         const usernya = mentionByReply ? mentionByReply : mentionByTag[0]
         const Input = mentionByTag[0] ? mentionByTag[0] : mentionByReply ? mentionByReply : q ? numberQuery : false
     	const isEval = body.startsWith('=>')
-    
         const AntiNsfw = m.isGroup ? ntnsfw.includes(from) : false
         const isAutoSticker = m.isGroup ? autosticker.includes(from) : false
         const antiVirtex = m.isGroup ? ntvirtex.includes(from) : false
@@ -153,7 +152,6 @@ try {
         const AntiLinkAll = m.isGroup ? ntilinkall.includes(from) : false
         const antiWame = m.isGroup ? ntwame.includes(from) : false
         const antiToxic = m.isGroup ? nttoxic.includes(from) : false
-        
         //theme sticker reply
         const GODStickWait = () => {
         let GODStikRep = fs.readFileSync('./GODMEDIA/theme/sticker_reply/wait.webp')
