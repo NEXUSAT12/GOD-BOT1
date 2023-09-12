@@ -2,39 +2,41 @@
   "name": "GOD-BOT_MD",
   "description": "whatsapp md bot build with nodejs",
   "repository": "https://github.com/NEXUSAT12/GOD-BOT1",
-  "logo": "./GODMEDIA/theme/GODBOTPIC.jpg",
+  "logo": "https://i.ibb.co/SxVw4z0/maxresdefault-6.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
-  "env": {  
-    "THEME": {
-    "description": "Put the theme name you want to use. Avilable themes are DEKU,LUFFY",
-    "value": "Put your theme here like DEKU/BLACKGOKU/LUFFY/RENGOKU",
-    "required": true 
-    },
-   "OWNER_NAME": {
-     "description": "BOT OWNER NAME",
-     "value": "Put Owner Number here"
-     },
-    "OWNER_NUMBER": {
-      "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
-      "value": "Put Owner Number here"
+  "env": {
+      "THEME": {
+        "description": "Put the theme name you want to use. Avilable themes are DEKU,LUFFY",
+        "value": "Put your theme here like DEKU/BLACKGOKU/LUFFY/RENGOKU",
+        "required": true 
       },
-    "BOT_NAME": {
-      "description": "BOT OWNER NAME",
-      "value": "Put Bot Name here"
+      "OWNER_NAME": {
+        "description": "BOT OWNER NAME",
+        "value": "Put Owner Number here"
+        "required": true 
       },
-    },
-    "PACK_AUTHOR": {
-      "description": "PUT STICKER AUTHOR NAME",
-      "value": "GOD-MD"
-    },
-    "PACK_NAME": {
-      "description": "PUT STICKER PACK NAME",
-      "value": "Wa-BOT"
-    }
-    "THEMEMOJI": {
-      "description": "PUT THEME EMOJI... ",
-      "value": "Put the themeemoji you want like 👑 "
-    }
+      "OWNER_NUMBER": {
+        "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
+        "value": "Put Owner Number here"
+        "required": true 
+      },
+      "BOT_NAME": {
+        "description": "BOT OWNER NAME",
+        "value": "Put Bot Name here"
+        "required": true 
+      },
+      "PACK_AUTHOR": {
+        "description": "PUT STICKER AUTHOR NAME",
+        "value": "GOD-MD"
+      },
+      "PACK_NAME": {
+        "description": "PUT STICKER PACK NAME",
+        "value": "Wa-BOT"
+      },
+      "THEMEMOJI": {
+        "description": "PUT THEME EMOJI... ",
+        "value": "Put the themeemoji you want like 👑 "
+      }
   },
   "buildpacks": [
     {
