@@ -45,12 +45,8 @@ global.creator = "918130784851@s.whatsapp.net"
 global.prefa = ['','!','.','#','&']
 global.sessionName = 'session'
 global.hituet = 0
-
+global.theme = process.env.THEME || 'DEKU'
 //media target
-global.thum = fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg") //ur thumb pic
-global.log0 = fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg") //ur logo pic
-global.err4r = fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg") //ur error pic
-global.thumb = fs.readFileSync("./GODMEDIA/theme/GODBOTPIC.jpg") //ur thumb pic
 global.defaultpp = 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60' //default pp wa
 
 //menu image maker
