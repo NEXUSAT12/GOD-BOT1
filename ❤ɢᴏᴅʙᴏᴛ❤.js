@@ -28,7 +28,7 @@ const mlstalk = require('./scrape/mlstalk')
 const textpro = require('./scrape/textpro')
 const textpro2 = require('./scrape/textpro2')
 const photooxy = require('./scrape/photooxy')
-const yts = require('secktor-pack')
+const yts = require('./scrape/yt-search')
 const vm = require('node:vm')
 const { EmojiAPI } = require("emoji-api")
 const emoji = new EmojiAPI()
@@ -55,7 +55,7 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-let theme = JSON.parse(fs.readFileSync('./GODMEDIA/theme/'+global.theme+'.json'))
+let theme = await fetchJson('https://raw.githubusercontent.com/NEXUSAT12/GOD-BOT1/main/GODMEDIA/theme/'+global.theme+'.json') 
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
@@ -3311,8 +3311,8 @@ case 'yts': case 'ytsearch': {
             break
 case 'play':  case 'song': {
 if (!text) return replygcGOD(`Example : ${prefix + command} anime whatsapp status`)
-const YT = require('ytdl-secktor')
-let yts = require("secktor-pack")
+const YT = require('./lib/ytdlcore')
+let yts = require("youtube-yts")
 let search = await yts(text)
 let anup3k = search.videos[0]
 const pl = await YT.mp3(anup3k.url)
