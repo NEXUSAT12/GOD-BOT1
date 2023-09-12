@@ -10,10 +10,7 @@
           "NEW_UPDATE": "*it's time to update the bot!*\n\n*Changes:*\n",
           "UPDATED_LOCAL": "*Successfully Updated!*"
       },
-      "global": {
-          "botName": " 𝙿𝚘𝚠𝚎𝚛𝚎𝚍 𝚋𝚢 Luffy-𝚃𝚑𝚎𝚖𝚎",
-          "body": "𝑊ℎ𝑎𝑡𝑠𝑎𝑝𝑝 𝐵𝑜𝑡",
-          "greet2" : "pirate king", 
+      "global": { 
           "pic1": "https://i.pinimg.com/564x/55/d9/a3/55d9a3e30c855b9a6471ba0023143204.jpg",
           "pic2": "https://i.pinimg.com/564x/57/ac/1f/57ac1ff8deff5152e093cb5cc40c289d.jpg",
           "pic3": "https://i.pinimg.com/564x/65/5e/04/655e04f0510e16a5dbb90535f89fc1ce.jpg",
