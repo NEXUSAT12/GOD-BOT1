@@ -5563,6 +5563,34 @@ const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
 return replygcGOD(`${themeemoji} *Fact:* ${data.fact}\n`)   
 }
 break
+case 'chatgpt': case 'gpt':{
+if (!q) return replygcGOD(`Please provide a text query. Example: ${prefix + command} Hello, ChatGPT!`);
+const apiUrl1 = `https://vihangayt.me/tools/chatgpt?q=${encodeURIComponent(q)}`;
+const apiUrl2 = `https://gurugpt.cyclic.app/gpt4?prompt=${encodeURIComponent(q)}&model=llama`;
+try {
+const response1 = await fetch(apiUrl1);
+const responseData1 = await response1.json();
+if (response1.status === 200 && responseData1 && responseData1.status === true && responseData1.data) {
+const message = responseData1.data;
+const me = m.sender;
+await GODincBOT.sendMessage(m.chat, { text: message }, { quoted: m });
+} else {
+const response2 = await fetch(apiUrl2);
+const responseData2 = await response2.json();
+if (response2.status === 200 && responseData2 && responseData2.data) {
+const message = responseData2.data;
+const me = m.sender;
+await GODincBOT.sendMessage(m.chat, { text: message }, { quoted: m });
+} else {
+replygcGOD("Sorry, I couldn't fetch a response from both APIs at the moment.");
+}
+}
+} catch (error) {
+console.error(error);
+replygcGOD("An error occurred while fetching the response from both APIs.");
+}
+}
+break
 case 'ai': case 'openai':
 try {
 if (global.keyopenai === '') return replygcGOD("Api key limi exceeded");
@@ -5593,25 +5621,23 @@ replygcGOD("Sorry, there seems to be an error :"+ error.message);
 }
 }
 break
-case "aimage":
+case "aimage": case 'dalle': case 'imgai': {
+if (!q) return replygcGOD(`Please provide a query to generate an image. Example: ${prefix + command} Beautiful landscape`);
+const apiUrl = `https://gurugpt.cyclic.app/dalle?prompt=${encodeURIComponent(q)}&model=art`;
+//api source has ratelimit so may generate invalid results sometimes
 try {
-if (global.keyopenai === '') return replygcGOD("Apikey limit exceeded");
-if (!q) return replygcGOD(`Generate image from AI.\n\nExample:\n${prefix + command} man riding horse`)
-const { Configuration, OpenAIApi } = require('openai')
-const configuration = new Configuration({
-apiKey: global.keyopenai,
-});
-const openai = new OpenAIApi(configuration);
-const response = await openai.createImage({
-prompt: text,
-n: 1,
-size: "512x512",
-});
-//console.log(response.data.data[0].url)
-GODincBOT.sendImage(from, response.data.data[0].url, text, m);
-} catch (err) {
-console.log(err);
-replygcGOD("Sorry, there seems to be an error :"+ err);
+const response = await fetch(apiUrl);
+if (response.status === 200) {
+const imageUrls = await response.json();
+const randomImageUrl = imageUrls.result[Math.floor(Math.random() * imageUrls.result.length)];
+await GODincBOT.sendMessage(m.chat, { image: { url: randomImageUrl } }, { quoted: m });
+} else {
+replygcGOD("Sorry, I couldn't generate an image at the moment.");
+}
+} catch (error) {
+console.error(error);
+replygcGOD("An error occurred while generating the image.");
+}
 }
 break
 case 'myip': {
