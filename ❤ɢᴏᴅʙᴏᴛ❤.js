@@ -62,16 +62,12 @@ const pic4 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic4.jpg')
 const pic5 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic5.jpg')
 const pic6 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic6.jpg')
 const pic7 = fs.readFileSync('./GODMEDIA/'+global.theme+'/pic7.jpg')
-
 let  theme = [ pic1, pic2, pic3, pic4, pic5, pic6, pic7 ]
 const randomImageFile = theme[Math.floor(Math.random() * theme.length)];
-const tta =  fs.readFileSync(randomImageFile);
-
-
-const log0  = tta
-const thum  = tta
-const thumb = tta
-const err4r = tta
+const log0  = randomImageFile
+const thum  = randomImageFile
+const thumb = randomImageFile
+const err4r = randomImageFile
 
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
 if (global.db) global.db = {
