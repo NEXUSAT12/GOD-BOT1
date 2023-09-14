@@ -58,36 +58,16 @@ let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
-// global.a = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic1.jpg')
-// global.b = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic2.jpg')
-// global.c = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic3.jpg')
-// global.d = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic4.jpg')
-// global.e = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic5.jpg')
-// global.f = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic6.jpg')
-// global.g = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic7.jpg')
-async function displayRandomImage() {
-    try {
-	const dir = './GODMEDIA/theme/'+global.theme+'.json';    
-        const images = await fetchImages(dir);
-        const randomImageURL = getRandomImage(images);
-        displayImage(randomImageURL);
-    } catch (error) {
-        console.error("Error fetching or displaying the image:", error);
-    } 
-if (displayImage !== undefined) {
-// Access properties or methods of myObject safely
-console.log(displayImage.toString());
-} else {
-  console.error("displayImage is undefined");
-}
-}
-// Call the function to initiate the process
-const randomImageFile = displayRandomImage()
-if (randomImageFile !== undefined ) { // Access properties or methods of myObject safely
-  console.log(randImageFile.toString());
-} else {
-  console.error("randomImageFile is undefined");
-}
+global.a = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic1.jpg')
+global.b = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic2.jpg')
+global.c = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic3.jpg')
+global.d = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic4.jpg')
+global.e = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic5.jpg')
+global.f = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic6.jpg')
+global.g = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic7.jpg')
+const abc = [a,b,c,d,e,f,g]
+const randomImageFile = pickRandom(abc)
+
 const log0 = randomImageFile;
 const thum = randomImageFile;
 const thumb = randomImageFile;
