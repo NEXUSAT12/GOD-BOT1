@@ -1,4 +1,4 @@
-require('./settings.json')
+require('./settings')
 const fs = require('fs');
 const path = require('path');
 
