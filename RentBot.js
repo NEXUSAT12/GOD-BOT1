@@ -14,7 +14,7 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
 if (global.conns instanceof Array) console.log()
 else global.conns = []
 
-const rentfromGODBOT = async (GODincBOT, m, from) => {
+function rentfromGODBOT = async (GODincBOT, m, from) => {
 const { sendImage, sendMessage } = GODincBOT;
 const { reply, sender } = m;
 const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `./database/rentbot/${sender.split("@")[0]}`), log({ level: "silent" }));
