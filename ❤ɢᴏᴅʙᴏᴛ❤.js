@@ -1462,7 +1462,7 @@ Type *surrender* to surrender and admit defeat`
 case 'rentbot': {
 if (m.isGroup) return GODStickPrivate()
 
-rentfromGOD(GODincBOT, m, from)
+rentfromGODBOT(GODincBOT, m, from)
 }
 break
 case 'rentbotlist': 
