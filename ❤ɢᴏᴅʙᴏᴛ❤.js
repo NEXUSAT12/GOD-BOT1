@@ -54,15 +54,19 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-const pic1 = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic1.jpg')
-const pic2 = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic2.jpg')
-const pic3 = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic3.jpg')
-const pic4 = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic4.jpg')
-const pic5 = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic5.jpg')
-const pic6 = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic6.jpg')
-const pic7 = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic7.jpg')
-let  theme = [ pic1, pic2, pic3, pic4, pic5, pic6, pic7 ]
-const randomImageFile = theme[Math.floor(Math.random() * theme.length)];
+const a = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic1.jpg')
+const b = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic2.jpg')
+const c = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic3.jpg')
+const d = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic4.jpg')
+const e = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic5.jpg')
+const f = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic6.jpg')
+const g = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic7.jpg')
+function pickRandom(list) {
+      return list[Math.floor(list.length * Math.random())];
+    }
+const abc = ['a','b','c','d','e','f','g'];
+const result = pickRandom(abc);
+const randomImageFile = result;
 const log0 = randomImageFile;
 const thum = randomImageFile;
 const thumb = randomImageFile;
