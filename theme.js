@@ -26,7 +26,6 @@ function getRandomThemeImage() {
 // Use the function
 try {
   const randomImagePath = getRandomThemeImage();
-  console.log('Random Image Path:', randomImagePath);
 } catch (error) {
   console.error('Error:', error.message);
 }
