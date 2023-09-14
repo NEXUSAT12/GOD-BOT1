@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 // Function to get a random image from the theme directory
 function getRandomThemeImage() {
-const themeDir = `./GODMEDIA/+${global.theme}`
+const themeDir = './GODMEDIA/'+${global.theme}
 if (!fs.existsSync(themeDir)) {
 throw new Error('Theme directory not found!');
 }
