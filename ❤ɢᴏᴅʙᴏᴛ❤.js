@@ -54,20 +54,18 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-const a = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic1.jpg')
-const b = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic2.jpg')
-const c = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic3.jpg')
-const d = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic4.jpg')
-const e = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic5.jpg')
-const f = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic6.jpg')
-const g = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic7.jpg')
+global.a = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic1.jpg')
+global.b = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic2.jpg')
+global.c = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic3.jpg')
+global.d = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic4.jpg')
+global.e = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic5.jpg')
+global.f = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic6.jpg')
+global.g = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic7.jpg')
 function pickRandom(list) {
-	return list[Math.floor(list.length * Math.random())];
-    }
-const abc = ['a','b','c','d','e','f','g'];
-const result = pickRandom(abc);
-console.log(result);
-const randomImageFile = result;
+return list[Math.floor(list.length * Math.random())]
+}
+let images = [a,b,c,d,e,f,g]
+let randomImageFile = pickRandom(images)
 const log0 = randomImageFile;
 const thum = randomImageFile;
 const thumb = randomImageFile;
