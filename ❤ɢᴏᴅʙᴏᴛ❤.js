@@ -66,6 +66,7 @@ function pickRandom(list) {
     }
 const abc = ['a','b','c','d','e','f','g'];
 const result = pickRandom(abc);
+console.log(result()
 const randomImageFile = result;
 const log0 = randomImageFile;
 const thum = randomImageFile;
