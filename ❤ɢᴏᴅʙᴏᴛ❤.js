@@ -13,6 +13,7 @@ const { uptotelegra } = require('./scrape/upload')
 const { msgFilter } = require('./lib/antispam')
 const { ytDonlodMp3, ytDonlodMp4, ytPlayMp3, ytPlayMp4, ytSearch } = require('./scrape/yt')
 const anon = require('./lib/menfess') 
+const randomImagePath  = require('./theme.js')
 const scp1 = require('./scrape/scraper') 
 const scp2 = require('./scrape/scraperr')
 const scp3 = require('./scrape/scraperrr')
@@ -54,26 +55,7 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-const path = require('path');
-// Define the directory where your images are located and the theme
-const imageDirectory = path.join('./GODMEDIA', global.theme);
-// Create an array to store the image file data
-const theme = [];
-// Define the number of images you have (e.g., 7 in this case)
-const numImages = 7;
-// Read image files and store them in the 'theme' array
-for (let i = 1; i <= numImages; i++) {
-    const imagePath = path.join(imageDirectory, `pic${i}.jpg`);
-    try {
-        const imageData = fs.readFileSync(imagePath);
-        theme.push(imageData);
-    } catch (error) {
-        console.error(`Error reading image ${i}: ${error.message}`);
-    }
-}
-// Get a random image from the 'theme' array
-const randomImageFile = theme[Math.floor(Math.random() * theme.length)];
-// Assign the random image to the variables
+const randomImageFile = randomImagePath
 const log0 = randomImageFile;
 const thum = randomImageFile;
 const thumb = randomImageFile;
