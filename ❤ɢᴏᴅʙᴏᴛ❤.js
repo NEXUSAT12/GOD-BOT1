@@ -54,18 +54,28 @@ let ntilinkfb =JSON.parse(fs.readFileSync('./database/antilinkfacebook.json'))
 let ntilinkig =JSON.parse(fs.readFileSync('./database/antilinkinstagram.json'))
 let ntilinkytch =JSON.parse(fs.readFileSync('./database/antilinkytchannel.json'))
 let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
-global.a = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic1.jpg')
-global.b = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic2.jpg')
-global.c = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic3.jpg')
-global.d = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic4.jpg')
-global.e = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic5.jpg')
-global.f = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic6.jpg')
-global.g = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic7.jpg')
+
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
-let images = [a,b,c,d,e,f,g]
-let randomImageFile = pickRandom(images)
+// global.a = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic1.jpg')
+// global.b = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic2.jpg')
+// global.c = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic3.jpg')
+// global.d = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic4.jpg')
+// global.e = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic5.jpg')
+// global.f = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic6.jpg')
+// global.g = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic7.jpg')
+async function displayRandomImage() {
+    try {
+        const images = await fetchImages('/GODMEDIA/theme/'+global.theme+'.json');
+        const randomImageURL = getRandomImage(images);
+        displayImage(randomImageURL);
+    } catch (error) {
+        console.error("Error fetching or displaying the image:", error);
+    }
+}
+// Call the function to initiate the process
+async randomImageFile = await displayRandomImage();
 const log0 = randomImageFile;
 const thum = randomImageFile;
 const thumb = randomImageFile;
