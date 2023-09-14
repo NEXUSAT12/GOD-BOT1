@@ -75,7 +75,7 @@ async function displayRandomImage() {
     }
 }
 // Call the function to initiate the process
-async randomImageFile = await displayRandomImage();
+const randomImageFile = displayRandomImage();
 const log0 = randomImageFile;
 const thum = randomImageFile;
 const thumb = randomImageFile;
