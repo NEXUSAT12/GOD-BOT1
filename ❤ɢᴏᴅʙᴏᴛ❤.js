@@ -62,11 +62,11 @@ const e = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/
 const f = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic6.jpg')
 const g = fs.readFileSync(__dirname + '/' + 'GODMEDIA' + '/' + global.theme + '/' + 'pic7.jpg')
 function pickRandom(list) {
-      return list[Math.floor(list.length * Math.random())];
+	return list[Math.floor(list.length * Math.random())];
     }
 const abc = ['a','b','c','d','e','f','g'];
 const result = pickRandom(abc);
-console.log(result());
+console.log(result);
 const randomImageFile = result;
 const log0 = randomImageFile;
 const thum = randomImageFile;
