@@ -67,15 +67,27 @@ return list[Math.floor(list.length * Math.random())]
 // global.g = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic7.jpg')
 async function displayRandomImage() {
     try {
-        const images = await fetchImages('/GODMEDIA/theme/'+global.theme+'.json');
+	const dir = './GODMEDIA/theme/'+global.theme+'.json';    
+        const images = await fetchImages(dir);
         const randomImageURL = getRandomImage(images);
         displayImage(randomImageURL);
     } catch (error) {
         console.error("Error fetching or displaying the image:", error);
-    }
+    } 
+if (displayImage !== undefined) {
+// Access properties or methods of myObject safely
+console.log(displayImage.toString());
+} else {
+  console.error("displayImage is undefined");
+}
 }
 // Call the function to initiate the process
-const randomImageFile = displayRandomImage();
+const randomImageFile = displayRandomImage()
+if (randomImageFile !== undefined ) { // Access properties or methods of myObject safely
+  console.log(randImageFile.toString());
+} else {
+  console.error("randomImageFile is undefined");
+}
 const log0 = randomImageFile;
 const thum = randomImageFile;
 const thumb = randomImageFile;
