@@ -7,7 +7,7 @@
   "env": {
       "THEME": {
         "description": "Put the theme name you want to use. Avilable themes are DEKU,LUFFY",
-        "value": "Put your theme here like DEKU/BLACKGOKU/LUFFY/RENGOKU",
+        "value": "Put your theme here like DEKU/GOJO/JJK/DAISUKE/CHAINSAWMAN/LUFFY/RENGOKU",
         "required": true 
       },
       "OWNER_NAME": {
