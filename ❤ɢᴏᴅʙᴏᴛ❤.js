@@ -58,19 +58,10 @@ let ntilinkytvid =JSON.parse(fs.readFileSync('./database/antilinkytvideo.json'))
 function pickRandom(list) {
 return list[Math.floor(list.length * Math.random())]
 }
-global.a = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic1.jpg')
-global.b = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic2.jpg')
-global.c = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic3.jpg')
-global.d = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic4.jpg')
-global.e = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic5.jpg')
-global.f = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic6.jpg')
-global.g = fs.readFileSync(__dirname+'/'+'GODMEDIA'+'/'+ global.theme+'/'+'pic7.jpg')
-const abc = [a,b,c,d,e,f,g]
-const randomImageFile = pickRandom(abc)
-
+const randomImageFile = fs.readFileSync('./GODMEDIA/video/'+global.theme+'.mp4')
 const log0 = randomImageFile;
 const thum = randomImageFile;
-const thumb = fs.readFileSync('./GODMEDIA/video/GOJO.mp4');
+const thumb = randomImageFile;
 const err4r = randomImageFile;
 
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
@@ -516,7 +507,7 @@ isForwarded: true,
 "body": `${ownername}`,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
-"thumbnail": fs.readFileSync(`./GODMEDIA/theme/GODBOTPIC.jpg`),
+"thumbnail": fs.readFileSync('./GODMEDIA/theme/GODBOTPIC.jpg'),
 "sourceUrl": `${wagc}`}}},
 { quoted: m})
 }
@@ -1546,27 +1537,26 @@ case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 │❏.stickermenu
 │❏.databasemenu
 │❏.stalkermenu
-│❏.bugmenu
 │❏.othermenu
 │❏.premiummenu
 └─────────────────┈ ⳹`
             let ments = [ownernya, me, mark]        
-           GODincBOT.sendMessage(m.chat, { image: log0, caption: GODezy , mentions : ments}, { quoted: m })
+           GODincBOT.sendMessage(m.chat, { video: log0, caption: GODezy , mentions : ments}, { quoted: m })
 }
            break
 case 'allmenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${allmenu(prefix, hituet)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'ownermenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${ownermenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'othermenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${othermenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'downloadmenu': {
@@ -1576,68 +1566,68 @@ GODincBOT.sendMessage(m.chat, { video: thumb,caption:tex, mentions:[sender] },{ 
 break
 case 'groupmenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${groupmenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'premiummenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${premiummenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video:log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 		
 case 'funmenu': {
 const text = `Hi @${sender.split("@")[0]}\n\n${funmenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'stalkermenu': {
 const tex =  `Hi @${sender.split("@")[0]}\n\n${stalkermenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'randomphotomenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${randphotomenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'randomvideomenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${randvideomenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'textpromenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${textpromenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video:log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'photooxymenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${photooxymenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'ephoto360menu': {
 const tex =  `Hi @${sender.split("@")[0]}\n\n${ephoto360menu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'animemenu': {
 const text =  `Hi @${sender.split("@")[0]}\n\n${animemenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'stickermenu': {
 const tex =  `Hi @${sender.split("@")[0]}\n\n${stickermenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'databasemenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${databasemenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video:log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'aimenu': { 
 const tex = `Hi @${sender.split("@")[0]}\n\n${aimenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: log0, caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 
@@ -1822,26 +1812,8 @@ GODincBOT.sendMessage(from, {text: `Here @${teman.split("@")[0]}`, mentions: [te
 break
 case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
 me = m.sender
-teks = `*「  ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nHi @${me.split('@')[0]} 👋\nDont forget to donate yeah🍜 👇 https://i.ibb.co/w46VQ8D/Picsart-22-10-08-06-46-30-674.jpg`
-sendGODincBOTMessage(from, { 
-text: teks,
-mentions:[sender],
-contextInfo:{
-forwardingScore: 9999999,
-isForwarded: true, 
-mentionedJid:[sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"renderLargerThumbnail": true,
-"title": botname, 
-"containsAutoReply": true,
-"mediaType": 1, 
-"thumbnail": defaultpp,
-"mediaUrl": `${wagc}`,
-"sourceUrl": `${wagc}`
-}
-}
-})
+const teks = `*「  ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nHi @${me.split('@')[0]} 👋\n `
+GODincBOT.sendMessage(m.chat, {video:log0 ,caption: teks ,mentions: [me],}, {quoted: m,})
 }
 break
 case 'request': case 'reportbug': {
@@ -3074,7 +3046,7 @@ await fs.unlinkSync(audio.path)
 break
 case 'ytmp4': case 'ytvideo': {
 const YT = require('./lib/ytdlcore')
-if (args.length < 1 || !isUrl(text) || !GODvidoh.isYTUrl(text)) replygcGOD(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
+if (args.length < 1 || !isUrl(text) || !YT.isYTUrl(text)) replygcGOD(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
 const vid = await YT.mp4(text)
 const ytc = `
 *${themeemoji}Tittle:* ${vid.title}
