@@ -34,7 +34,7 @@ global.ownernumber =  process.env.OWNER_NUMBER || '918130784851'
 global.ownername = process.env.OWNER_NAME === undefined ? '༺⟬☤⟭༻NEXUS༺⟬☤⟭༻' : process.env.OWNER_NAME,
 global.ownerNumber = ["918130784851@s.whatsapp.net"]
 global.ownerweb = "https://superprofile.bio/lucifercreator"
-global.websitex = "https://youtu.be/L_SIk59QeAU"
+global.websitex = "https://superprofile.bio/lucifercreator"
 global.wagc = "https://chat.whatsapp.com/H2yL8sXuUsd2K1wuYydjnb"
 global.themeemoji =  process.env.THEMEMOJI || "👑" 
 global.wm = "༺⟬☤⟭༻."
