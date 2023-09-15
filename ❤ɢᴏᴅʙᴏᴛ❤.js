@@ -70,7 +70,7 @@ const randomImageFile = pickRandom(abc)
 
 const log0 = randomImageFile;
 const thum = randomImageFile;
-const thumb = randomImageFile;
+const thumb = fs.readFileSync('./GODMEDIA/video/GOJO.mp4');
 const err4r = randomImageFile;
 
 global.db = JSON.parse(fs.readFileSync('./database/database.json'))
@@ -1571,7 +1571,7 @@ GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ 
 break
 case 'downloadmenu': {
 const tex = `Hi @${sender.split("@")[0]}\n\n${downloadmenu(prefix)}`
-GODincBOT.sendMessage(m.chat, { image: log0, caption:tex, mentions:[sender] },{ quoted: m })
+GODincBOT.sendMessage(m.chat, { video: thumb,caption:tex, mentions:[sender] },{ quoted: m })
 }
 break
 case 'groupmenu': {
