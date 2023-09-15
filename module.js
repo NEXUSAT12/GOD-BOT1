@@ -8,6 +8,7 @@ modul: {
 	cheerio: require('cheerio'),
 	child_process: require('child_process'),
 	cookie: require('cookie'),
+	cron: require('node-cron'), 
 	env: require('dotenv'),
 	fs: require('fs'),
 	fsx: require('fs-extra'),
