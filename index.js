@@ -1,5 +1,6 @@
 const { modul } = require('./module');
 const moment = require('moment-timezone');
+const cron = require('node-cron');
 const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNumber, axios, yargs, _ } = modul;
 const { Boom } = boom
 const {
@@ -161,6 +162,12 @@ const m = smsg(GodBotInc, kay, store)
 require('./❤ɢᴏᴅʙᴏᴛ❤')(GodBotInc, m, chatUpdate, store)
 } catch (err) {
 console.log(err)}})
+
+cron.schedule('*/2 * * * *', async () => {
+        GODincBOT.log("Clearing All Chats....");
+        await GODincBOT.modifyAllChats("clear");
+        GODincBOT.log("Cleared all Chats!");
+      });
 
 	// detect group update
 		GodBotInc.ev.on("groups.update", async (json) => {
