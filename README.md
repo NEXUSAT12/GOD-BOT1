@@ -57,6 +57,7 @@ GOD Bot Multi Device is a automated whatsapp bot created by <a href="https://git
 
 ## `PLEASE SCAN THE QR CODE AND UPLOAD THE SESSION AS CREDS.JSON IN THE SESSION FOLDER IF HAVE ANY ISSUE CONTACT ME`
 
+- CHANGE SESSION  [HERE]('./session/cred.json')
 ## ` BUILDPACKS`
 
 ```
