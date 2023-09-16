@@ -55,7 +55,7 @@ GOD Bot Multi Device is a automated whatsapp bot created by <a href="https://git
 ## `Scan QR Code For Session`
 [![GOD Bot](https://repl.it/badge/github/quiec/whatsasena)](https://replit.com/@NEXUSAT12/GOD-BOT-1-MULTI-AUTH-SESSION-GENERATOR)
 
-## `PLEASE SCAN THE QR CODE AND UPLOAD THE SESSION AS SESSION.JSON  IF HAVE ANY ISSUE CONTACT ME`
+## `PLEASE SCAN THE QR CODE AND UPLOAD THE SESSION AS CREDS.JSON IN THE SESSION FOLDER IF HAVE ANY ISSUE CONTACT ME`
 
 ## ` BUILDPACKS`
 
