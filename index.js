@@ -247,19 +247,8 @@ GodLft = await getBuffer(ppuser)
    │✑ ${xmembers}th
    │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
    │✑ ${xtime} ${xdate}
-   └───────────────┈༺⟬☤⟭༻`
-GodBotInc.sendMessage(anu.id,
- { text: Godbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": GodWlcm,
-"sourceUrl": `${wagc}`}}})
+   └───────────────┈༺⟬☤⟭༻\n\n\n${metadata.desc}`
+GODincBOT.sendMessage(m.chat,{image : GodWlcm , caption : Godbody },{quoted: m })
                 } else if (anu.action == 'remove') {
                 	const Godbuffer = await getBuffer(ppuser)
                     const Godtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
@@ -276,18 +265,7 @@ GodBotInc.sendMessage(anu.id,
    │✑  𝗧𝗶𝗺𝗲 : 
    │✑  ${Godtime} ${Goddate}
    └───────────────┈༺⟬☤⟭༻`
-GodBotInc.sendMessage(anu.id,
- { text: Godbody,
- contextInfo:{
- mentionedJid:[num],
- "externalAdReply": {"showAdAttribution": true,
- "containsAutoReply": true,
- "title": ` ${global.botname}`,
-"body": `${ownername}`,
- "previewType": "PHOTO",
-"thumbnailUrl": ``,
-"thumbnail": GodLft,
-"sourceUrl": `${wagc}`}}})
+GODincBOT.sendMessage(m.chat,{image : GodLft, caption : Godbody },{quoted: m })
 } else if (anu.action == 'promote') {
 const Godbuffer = await getBuffer(ppuser)
 const Godtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
