@@ -248,7 +248,7 @@ GodLft = await getBuffer(ppuser)
    │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
    │✑ ${xtime} ${xdate}
    └───────────────┈༺⟬☤⟭༻\n\n\n${metadata.desc}`
-GODincBOT.sendMessage(m.chat,{image : GodWlcm , caption : Godbody },{quoted: m })
+GODincBOT.sendMessage(m.chat,{image : GodWlcm , caption : Godbody })
                 } else if (anu.action == 'remove') {
                 	const Godbuffer = await getBuffer(ppuser)
                     const Godtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
@@ -265,7 +265,7 @@ GODincBOT.sendMessage(m.chat,{image : GodWlcm , caption : Godbody },{quoted: m }
    │✑  𝗧𝗶𝗺𝗲 : 
    │✑  ${Godtime} ${Goddate}
    └───────────────┈༺⟬☤⟭༻`
-GODincBOT.sendMessage(m.chat,{image : GodLft, caption : Godbody },{quoted: m })
+GODincBOT.sendMessage(m.chat,{image : GodLft, caption : Godbody })
 } else if (anu.action == 'promote') {
 const Godbuffer = await getBuffer(ppuser)
 const Godtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
