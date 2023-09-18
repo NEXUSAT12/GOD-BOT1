@@ -255,7 +255,7 @@ let buttonMessage = {
     footer: `${global.botname}`,
     headerType: 4,
     }
-GODincBOT.sendMessage(anu.id, buttonMessage)
+GODBOTInc.sendMessage(anu.id, buttonMessage)
                 } else if (anu.action == 'remove') {
                 	const Godbuffer = await getBuffer(ppuser)
                     const Godtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
