@@ -5702,22 +5702,17 @@ case 'payment':{
 if(!quoted) return replygcGOD(`send the screenshot of payment with caption payment successfull after that owner will contact you  if it take more then an hour please contact owner here \n\n owner : https://wa.me/918130784851`)
 let media = await GODincBOT.downloadAndSaveMediaMessage(quoted)
 let teks1 = `PAYMENT REQUEST RECIVED\n\n*BUYER*: @${m.sender.split("@")[0]}`
-for (let i of payowner) {
-await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : media , caption: teks1, 
-contextInfo:{
-forwardingScore: 9999999, 
-isForwarded: true
-}})
-}
+await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : media , caption: teks1, })
 }
 
 break
 case 'netflix' : {
-if(!text) return replygcGOD('Choose a Netflix pack from the following:\n1. BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n2. Standard: 6 MONTHS SUBSECTION IN 370 INR\n3. Premium: ONE YEAR SUBSCRIPTION IN 520 INR');
-  } else if (text === '1' || text === '2' || text === '3') {
-    const pack = text === '1' ? 'Basic' : text === '2' ? 'Standard' : text ==='3' ?'Premium';
-    const imageUrl = 'https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png';
+if(!text) return replygcGOD('Choose a Netflix pack from the following:\n1. BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n2. Standard: 6 MONTHS SUBSECTION IN 370 INR\n3. Premium: ONE YEAR SUBSCRIPTION IN 520 INR')
+if (text === '1' || text === '2' || text === '3') {
+const pack = text === '1' ? 'Basic' : text === '2' ? 'Standard' : text ==='3' ?'Premium';
+const imageUrl = 'https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png';
 GODincBOT.sendMessage(m.char,{image:{url:imageurl},caption: `You have selected the ${pack} Netflix pack. Enjoy streaming!`})
+}
 }
 break
 case 'genshin':
