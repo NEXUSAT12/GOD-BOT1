@@ -229,9 +229,8 @@ ppgroup = await GodBotInc.profilePictureUrl(anu.id, 'image')
 ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
 //welcome\\
-memb = metadata.participants.length
-GodWlcm = await getBuffer(ppuser)
-GodLft = await getBuffer(ppuser)
+const memb = metadata.participants.length
+Godgreet = await getBuffer(ppuser)
                 if (anu.action == 'add') {
                 const Godbuffer = await getBuffer(ppuser)
                 let GodName = num
@@ -249,7 +248,7 @@ GodLft = await getBuffer(ppuser)
    │✑ ${xtime} ${xdate}
    └───────────────┈༺⟬☤⟭༻\n\n\n ${metadata.desc}`
 let buttonMessage = {
-    image: GodLft,
+    image: Godgreet,
     mentions: [num],
     caption: Godbody,
     footer: `${global.botname}`,
@@ -272,7 +271,13 @@ GodBotInc.sendMessage(anu.id, buttonMessage)
    │✑  𝗧𝗶𝗺𝗲 : 
    │✑  ${Godtime} ${Goddate}
    └───────────────┈༺⟬☤⟭༻`
-GODincBOT.sendMessage(anu.id,{image : GodLft, caption : Godbody })
+let buttonMessage = {
+    image: Godgreet,
+    mentions: [num],
+    caption: Godbody,
+    headerType: 4,
+    }
+GodBotInc.sendMessage(anu.id, buttonMessage)
 } else if (anu.action == 'promote') {
 const Godbuffer = await getBuffer(ppuser)
 const Godtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
