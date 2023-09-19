@@ -5698,25 +5698,31 @@ case 'ringtone': {
 		GODincBOT.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
 	    }
 	    break
-case 'payment successfull':{
+case 'payment':{
 if(!quoted) return replygcGOD(`send the screenshot of payment with caption payment successfull after that owner will contact you  if it take more then an hour please contact owner here \n\n owner : https://wa.me/918130784851`)
 let media = await GODincBOT.downloadAndSaveMediaMessage(quoted)
 let teks1 = `PAYMENT REQUEST RECIVED\n\n*BUYER*: ${m.sender.split("@")[0]}`
-GODincBOT.sendMessage("918130784851@s.whatsapp.net",{image: media , caption : teks1})
+let owner = "918130784851"
+for (let i of owner) {
+GODincBOT.sendMessage(i + "@s.whatsapp.net", {
+image : {url: media},
+text: teks1,
+})
+}
 }
 break
 case 'netflix' :{
-if(!text)return replygcGOD(`WHICH PACK YOU WANT????\n\nPRICES ARE\n1 MONTH: 140 INR\n6 MONTH: 370 INR\n 1 YEAR: 520 INR`)
-if (!text == '1 month') {
-GODincBOt.sendMessage(m.chat,{image:{url:'https://i.ibb.co/Yk9z2PD/Google-Pay-QR.png'},caption:`PLEASE PAY THE 140 INR and share the screenshot with caption\n*payment successfull*`},{quoted:m})
+if(!text)return replygcGOD(`WHICH PACK YOU WANT????\n\nPRICES ARE\n1 MONTH: 140 INR\n6 MONTH: 370 INR\n1 YEAR: 520 INR`)
+if (!text == '1 month'){
+await GODincBOt.sendMessage(m.chat,{image:{url:'https://i.ibb.co/Yk9z2PD/Google-Pay-QR.png'},caption:`PLEASE PAY THE 140 INR and share the screenshot with caption\n*payment successfull*`},{quoted:m})
 } else if (!text == '6 month'){
-GODincBOt.sendMessage(m.chat,{image:{url:'https://i.ibb.co/fkb0Bt3/Google-Pay-QR-1.png'},caption:`PLEASE PAY THE 370 INR and share the screenshot with caption\n*payment successfull*`},{quoted:m})
-} else if (!text == '1 year ') {
-GODincBOt.sendMessage(m.chat,{image:{url:'https://i.ibb.co/YjJ6sbY/Google-Pay-QR-2.png'},caption:`PLEASE PAY THE 520 INR and share the screenshot with caption\n*payment successfull*`},{quoted:m})	
+await GODincBOt.sendMessage(m.chat,{image:{url:'https://i.ibb.co/fkb0Bt3/Google-Pay-QR-1.png'},caption:`PLEASE PAY THE 370 INR and share the screenshot with caption\n*payment successfull*`},{quoted:m})
+} else if (!text == '1 year'){
+await GODincBOt.sendMessage(m.chat,{image:{url:'https://i.ibb.co/YjJ6sbY/Google-Pay-QR-2.png'},caption:`PLEASE PAY THE 520 INR and share the screenshot with caption\n*payment successfull*`},{quoted:m})	
 }
 }
 break
-	case 'genshin':
+case 'genshin':
 if (!text) return replygcGOD(`Which genshin are you lookin for?`)
 try {
 const genshin = require("genshin-api")
