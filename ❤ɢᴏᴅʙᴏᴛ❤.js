@@ -5709,7 +5709,7 @@ break
 case 'netflix' : {
 if(!text) return replygcGOD('Choose a Netflix pack from the following:\n1. BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n2. Standard: 6 MONTHS SUBSECTION IN 370 INR\n3. Premium: ONE YEAR SUBSCRIPTION IN 520 INR')
 if (text === '1' || text === '2' || text === '3') {
-const pack = text === '1' ? 'Basic' : text === '2' ? 'Standard' : text ==='3' ?'Premium';
+const pack = text === '1' ? 'Basic' : text === '2' ? 'Standard' : text ==='3' ?'Premium'
 const imageUrl = 'https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png';
 GODincBOT.sendMessage(m.char,{image:{url:imageurl},caption: `You have selected the ${pack} Netflix pack. Enjoy streaming!`})
 }
