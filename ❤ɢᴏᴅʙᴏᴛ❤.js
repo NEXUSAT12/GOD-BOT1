@@ -5703,24 +5703,21 @@ if(!quoted) return replygcGOD(`send the screenshot of payment with caption payme
 let media = await GODincBOT.downloadAndSaveMediaMessage(quoted)
 let teks1 = `PAYMENT REQUEST RECIVED\n\n*BUYER*: @${m.sender.split("@")[0]}`
 for (let i of payowner) {
-GODincBOT.sendMessage(i + "@s.whatsapp.net", {
-image : media,
-caption : teks1
-}, {quoted:m})
+await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : media , caption: teks1, 
+contextInfo:{
+forwardingScore: 9999999, 
+isForwarded: true
+}})
 }
 }
+
 break
 case 'netflix' : {
-if(!text)return replygcGOD(`WHICH PACK YOU WANT????\n\nPRICES ARE\n1 =  ONE MONTH: 140 INR\n2 = 6 MONTH: 370 INR\n3 = 1 YEAR: 520 INR`)
-for (let i of !text) {
-if (i==1){
-await GODincBOt.sendMessage(m.chat,{image:{url:'https://i.ibb.co/Yk9z2PD/Google-Pay-QR.png'},caption:`PLEASE PAY THE 140 INR and share the screenshot with caption\n*payment successfull*`},{quoted:m})
-} else if (i==2){
-await GODincBOt.sendMessage(m.chat,{image:{url:'https://i.ibb.co/fkb0Bt3/Google-Pay-QR-1.png'},caption:`PLEASE PAY THE 370 INR and share the screenshot with caption\n*payment successfull*`},{quoted:m})
-} else if (i==3){
-await GODincBOt.sendMessage(m.chat,{image:{url:'https://i.ibb.co/YjJ6sbY/Google-Pay-QR-2.png'},caption:`PLEASE PAY THE 520 INR and share the screenshot with caption\n*payment successfull*`},{quoted:m})	
-}
-}
+if(!text) return replygcGOD('Choose a Netflix pack from the following:\n1. BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n2. Standard: 6 MONTHS SUBSECTION IN 370 INR\n3. Premium: ONE YEAR SUBSCRIPTION IN 520 INR');
+  } else if (text === '1' || text === '2' || text === '3') {
+    const pack = text === '1' ? 'Basic' : text === '2' ? 'Standard' : text ==='3' ?'Premium';
+    const imageUrl = 'https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png';
+GODincBOT.sendMessage(m.char,{image:{url:imageurl},caption: `You have selected the ${pack} Netflix pack. Enjoy streaming!`})
 }
 break
 case 'genshin':
