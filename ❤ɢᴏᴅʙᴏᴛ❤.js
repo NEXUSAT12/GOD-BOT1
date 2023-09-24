@@ -1486,11 +1486,13 @@ const repf = await GODincBOT.sendMessage(from, {
 contacts: { 
 displayName: `${list.length} Contact`, 
 contacts: list }, mentions: [sender] }, { quoted: m })
-GODincBOT.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Here is my handsome owner😇`, mentions: [sender]}, { quoted: repf })
 }
 break
+case 'creator':{
+ GODincBOT.sendMessage(from ,{contact : payowner, mentions: [sender] }, { quoted: m })
+}
 case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
-	        let ownernya = ownernomer + '@s.whatsapp.net'
+	    let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
             let timestampe = speed()
             let latensie = speed() - timestampe
@@ -1521,25 +1523,27 @@ case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 ╰┬────────────┈ ⳹
    │✑  Please Type The *MENU*
    │✑  Given *BELOW*
-┌└─────────────┈ ⳹
-│❏.allmenu
-│❏.downloadmenu
-│❏.funmenu
-│❏.aimenu
-│❏.groupmenu
-│❏.ownermenu
-│❏.photooxymenu
-│❏.textpromenu
-│❏.ephoto360menu
-│❏.animemenu
-│❏.randomphotomenu
-│❏.randomvideomenu
-│❏.stickermenu
-│❏.databasemenu
-│❏.stalkermenu
-│❏.othermenu
-│❏.premiummenu
-└─────────────────┈ ⳹`
+┌└────────────┈ ⳹
+│❏.ᴀʟʟᴍᴇɴᴜ
+│❏.ɢʀᴏᴜᴘᴍᴇɴᴜ
+│❏.ᴏᴡɴᴇʀᴍᴇɴᴜ
+│❏.ᴘʀᴇᴍɪᴜᴍᴍᴇɴᴜ
+╰─────────╾༻
+╭──────༺♡༻──────╮
+│❏.ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ
+│❏.Ғᴜɴᴍᴇɴᴜ
+│❏.ᴀɪᴍᴇɴᴜ
+│❏.ᴘʜᴏᴛᴏᴏxʏᴍᴇɴᴜ
+│❏.ᴛᴇxᴛᴘʀᴏᴍᴇɴᴜ
+│❏.ᴇᴘʜᴏᴛᴏ360ᴍᴇɴᴜ
+│❏.ᴀɴɪᴍᴇᴍᴇɴᴜ
+│❏.ʀᴀɴᴅᴏᴍᴘʜᴏᴛᴏᴍᴇɴᴜ
+│❏.ʀᴀɴᴅᴏᴍᴠɪᴅᴇᴏᴍᴇɴᴜ
+│❏.sᴛɪᴄᴋᴇʀᴍᴇɴ
+│❏.ᴅᴀᴛᴀʙᴀsᴇᴍᴇɴᴜ
+│❏.sᴛᴀʟᴋᴇʀᴍᴇɴᴜ
+│❏.ᴏᴛʜᴇʀᴍᴇɴᴜ
+╰──────༺♡༻──────╯`
             let ments = [ownernya, me, mark]        
            GODincBOT.sendMessage(m.chat, { video: log0, caption: GODezy , mentions : ments}, { quoted: m })
 }
@@ -5701,20 +5705,48 @@ case 'ringtone': {
 case 'payment':{
 if(!quoted) return replygcGOD(`send the screenshot of payment with caption payment successfull after that owner will contact you  if it take more then an hour please contact owner here \n\n owner : https://wa.me/918130784851`)
 let media = await GODincBOT.downloadAndSaveMediaMessage(quoted)
+let media = await GODincBOT.downloadAndSaveMediaMessage(m.quoted)
+let name = await fs.unlinkSync(media)
+let buffer = fs.readFileSync(name))
 let teks1 = `PAYMENT REQUEST RECIVED\n\n*BUYER*: @${m.sender.split("@")[0]}`
-await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : media , caption: teks1, })
+await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : buffer , caption: teks1, })
 }
-
 break
 case 'netflix' : {
-if(!text) return replygcGOD('Choose a Netflix pack from the following:\n BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n Standard: 6 MONTHS SUBSECTION IN 370 INR\n Premium: ONE YEAR SUBSCRIPTION IN 520 INR')
-if (text === 'basic' || text === 'standard' || text === 'premium') {
-const pack = text === '1' ? 'Basic' : text === '2' ? 'Standard' : 'Premium';
+const hh  = 'Choose a Netflix pack from the following:\n BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n Standard: 6 MONTHS SUBSECTION IN 370 INR\n Premium: ONE YEAR SUBSCRIPTION IN 520 INR \n\n PLEASE SEND THE SS OF PAYMENT WITH CAPTION *payment* AND WAIT FOD 15 MIN AFTER THAT CONTACT OWNER AFTER BUYING THE SUBSCRIPTION BY TYPING CREATOR'
 const imageUrl = 'https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png';
-GODincBOT.sendMessage(m.chat,{image:{url:imageurl},caption: `You have selected the ${pack} Netflix pack. Plase do the Payment and  Enjoy streaming!`})
-}
+GODincBOT.sendMessage(m.chat,{image:{url:imageurl},caption: `hh`},{quoted : m})
 }
 break
+case 'gita-verse':{
+ if (!text) return replygcGOD(`please give me any verse number`)
+let res = await fetch(`https://gita-api.vercel.app/odi/verse/${text}`);
+if (!res.ok) {
+let error = await res.json(); 
+throw new Error(`API request failed with status ${res.status} and message ${error.detail[0].msg}`);
+}
+let hhh = [ "https://i.ibb.co/hDW8PR3/e18902cc852d5a2718209aef6a1d5cce.jpg",
+	   "https://i.ibb.co/qR3CX6p/50c2c4f6b9ec79a9e9499c81140ebd99.jpg", 
+	   "https://i.ibb.co/02Jqr8J/a7a7526547fca6fa20dc591226644d28.jpg", 
+	   "https://i.ibb.co/PDfwtgF/84010faddb63452bf4fd5235baf4ea26.jpg", 
+	   "https://i.ibb.co/GWXKw8m/3da3e077cfe257d7d8eb5a07e0e96705.jpg", 
+	 ]
+let hh = pickRandom(hh) 	
+let json = await res.json();
+console.log('JSON response:', json);
+let gitaVerse = `
+🕉 *Bhagavad Gita: Sacred Teachings*\n
+📜 *Chapter ${json.chapter_no}: ${json.chapter_name}*\n
+Verse ${json.verse_no}:\n
+" ${json.verse} "\n
+*🔮 Translation:*\n
+${json.translation}\n
+*🧘‍♂️ Spiritual Insight (Purport):*\n
+${json.purport}`;
+
+   GODincBOT.sendMessage(m.chat, { image : {url:hh}, caption:gitaVerse} ,{quoted:m}) 
+}
+break 
 case 'genshin':
 if (!text) return replygcGOD(`Which genshin are you lookin for?`)
 try {
