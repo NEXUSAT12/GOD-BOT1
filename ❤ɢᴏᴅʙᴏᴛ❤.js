@@ -1486,11 +1486,8 @@ const repf = await GODincBOT.sendMessage(from, {
 contacts: { 
 displayName: `${list.length} Contact`, 
 contacts: list }, mentions: [sender] }, { quoted: m })
-}
+} 
 break
-case 'creator':{
- GODincBOT.sendMessage(from ,{contact : payowner, mentions: [sender] }, { quoted: m })
-}
 case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 	    let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
@@ -5727,29 +5724,36 @@ await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : {url: util.
 }
 break
 case 'netflix' : {
-const hh  = 'Choose a Netflix pack from the following:\n BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n Standard: 6 MONTHS SUBSECTION IN 370 INR\n Premium: ONE YEAR SUBSCRIPTION IN 520 INR \n\n PLEASE SEND THE SS OF PAYMENT WITH CAPTION *payment* AND WAIT FOD 15 MIN AFTER THAT CONTACT OWNER AFTER BUYING THE SUBSCRIPTION BY TYPING CREATOR'
+const hh  = `Choose a Netflix pack from the following:\n BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n Standard: 6 MONTHS SUBSECTION IN 370 INR\n Premium: ONE YEAR SUBSCRIPTION IN 520 INR \n\n PLEASE SEND THE SS OF PAYMENT WITH CAPTION *payment* AND WAIT FOR 15 MIN AFTER THAT CONTACT OWNER : https://wa.me/${global.payowner}`
 const imageUrl = ["https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png"]
-GODincBOT.sendMessage(m.chat,{image:{url:imageUrl},caption: `hh`},{quoted : m})
+GODincBOT.sendMessage(m.chat,{image:{url:imageUrl},caption: hh},{quoted : m})
 }
 break
-case 'gita-verse':{
-if (!text) return replygcGOD(`please give me any verse number`)
-let res = await fetch(`https://gita-api.vercel.app/odi/verse/${text}`);
-if (!res.ok) {
-let error = await res.json(); 
-throw new Error(`API request failed with status ${res.status} and message ${error.detail[0].msg}`);
-} 	
+case 'gita-verse' case 'geetaverse' case 'geeta-verse' :{
+if(!text) return replygcGOD(`Example : ${prefix + command} chapter number|verse number`)
+const tex1 = text.split("|")[0]
+const tex2 = text.split("|")[1]
+const fetch = require('node-fetch');
+const url = `https://bhagavad-gita3.p.rapidapi.com/v2/chapters/${tex1}/verses/${tex2}/`
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': 'd5998d8f8fmsh3b53579b14cab6cp126d52jsn2d9dbd46b0cb',
+    'X-RapidAPI-Host': 'bhagavad-gita3.p.rapidapi.com'
+  }
+};
+const res = await fetch(url, options);
 let json = await res.json();
 console.log('JSON response:', json);
 let gitaVerse = `
 🕉 *Bhagavad Gita: Sacred Teachings*\n
-📜 *Chapter ${json.chapter_no}: ${json.chapter_name}*\n
-Verse ${json.verse_no}:\n
-" ${json.verse} "\n
+📜 *Chapter ${json.chapter_number}: ${json.slug}*\n
+Verse ${json.verse_number}:\n
+" ${json.text} "\n
 *🔮 Translation:*\n
-${json.translation}\n
-*🧘‍♂️ Spiritual Insight (Purport):*\n
-${json.purport}`;
+${json.transliteration}\n
+*🧘‍♂️ word meaning :*\n
+${json.word_meanings}`;
 let hhh = [ "https://i.ibb.co/hDW8PR3/e18902cc852d5a2718209aef6a1d5cce.jpg",
 	   "https://i.ibb.co/qR3CX6p/50c2c4f6b9ec79a9e9499c81140ebd99.jpg", 
 	   "https://i.ibb.co/02Jqr8J/a7a7526547fca6fa20dc591226644d28.jpg", 
