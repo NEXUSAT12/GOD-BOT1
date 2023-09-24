@@ -5729,7 +5729,7 @@ const imageUrl = ["https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png"]
 GODincBOT.sendMessage(m.chat,{image:{url:imageUrl},caption: hh},{quoted : m})
 }
 break
-case 'gita-verse' case 'geetaverse' case 'geeta-verse' :{
+case 'gita-verse': case 'geetaverse' :case 'geeta-verse' : {
 if(!text) return replygcGOD(`Example : ${prefix + command} chapter number|verse number`)
 const tex1 = text.split("|")[0]
 const tex2 = text.split("|")[1]
