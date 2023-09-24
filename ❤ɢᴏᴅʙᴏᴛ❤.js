@@ -3029,7 +3029,7 @@ await fs.unlinkSync(pl.path)
 }
 break
 case "ytmp3": case "ytaudio": { //credit: Ray Senpai â¤ï¸ https://github.com/EternityBots/Nezuko
-if (args.length < 1 || !isUrl(text) || !GODaudp3.isYTUrl(text)) return replygcGOD(`Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
+if (args.length < 1 || !isUrl(text) || !YT.isYTUrl(text)) return replygcGOD(`Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
 const YT=require('./lib/ytdlcore')
 const audio = await YT.mp3(text)
 await GODincBOT.sendMessage(m.chat,{
@@ -5705,7 +5705,6 @@ case 'ringtone': {
 case 'payment':{
 if(!quoted) return replygcGOD(`send the screenshot of payment with caption payment successfull after that owner will contact you  if it take more then an hour please contact owner here \n\n owner : https://wa.me/918130784851`)
 let media = await GODincBOT.downloadAndSaveMediaMessage(quoted)
-let media = await GODincBOT.downloadAndSaveMediaMessage(m.quoted)
 let name = await fs.unlinkSync(media)
 let buffer = fs.readFileSync(name))
 let teks1 = `PAYMENT REQUEST RECIVED\n\n*BUYER*: @${m.sender.split("@")[0]}`
