@@ -5713,18 +5713,18 @@ case 'ringtone': {
 	    }
 	    break
 case 'payment':{
-if(!quoted) return replygcGOD(`send the screenshot of payment with caption payment successfull after that owner will contact you  if it take more then an hour please contact owner here \n\n owner : https://wa.me/918130784851`)
+if(!quoted) return replygcGOD(`send the screenshot of payment with caption payment successfull and your pack after that owner will contact you  if it take more then an hour please contact owner here \n\n owner : https://wa.me/918130784851`)
 let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
 let media = await GODincBOT.downloadAndSaveMediaMessage(quoted)
 if (/image/.test(mime)) {
 let anu = await TelegraPh(media)
-let teks1 = `PAYMENT REQUEST RECIVED\n\n*BUYER*: @${m.sender.split("@")[0]}`
+let teks1 = `PAYMENT REQUEST RECIVED ${text} \n\n\n\n*BUYER*: @${m.sender.split("@")[0]}`
 await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : {url: util.format(anu)}, caption: teks1, })
 }
 }
 break
 case 'netflix' : {
-const hh  = `Choose a Netflix pack from the following:\n BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n Standard: 6 MONTHS SUBSECTION IN 370 INR\n Premium: ONE YEAR SUBSCRIPTION IN 520 INR \n\n PLEASE SEND THE SS OF PAYMENT WITH CAPTION *payment* AND WAIT FOR 15 MIN AFTER THAT CONTACT OWNER : https://wa.me/${global.payowner}`
+const hh  = `Choose a Netflix pack from the following and pay Accourdiny :\n BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n\n Standard: 6 MONTHS SUBSECTION IN 370 INR\n\n Premium: ONE YEAR SUBSCRIPTION IN 520 INR \n\n\n\n PLEASE SEND THE SS OF PAYMENT WITH CAPTION *payment netflix and your pack name * AND WAIT FOR 15 MIN AFTER THAT CONTACT OWNER : https://wa.me/${global.payowner}`
 const imageUrl = ["https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png"]
 GODincBOT.sendMessage(m.chat,{image:{url:imageUrl},caption: hh},{quoted : m})
 }
@@ -5750,10 +5750,12 @@ let gitaVerse = `
 📜 *Chapter ${json.chapter_number}: ${json.slug}*\n
 Verse ${json.verse_number}:\n
 " ${json.text} "\n
-*🔮 Translation:*\n
+*🔮 Transliteration:*\n
 ${json.transliteration}\n
 *🧘‍♂️ word meaning :*\n
-${json.word_meanings}`;
+${json.word_meanings}
+*❤ translation :*\n
+${json.translations}`;
 let hhh = [ "https://i.ibb.co/hDW8PR3/e18902cc852d5a2718209aef6a1d5cce.jpg",
 	   "https://i.ibb.co/qR3CX6p/50c2c4f6b9ec79a9e9499c81140ebd99.jpg", 
 	   "https://i.ibb.co/02Jqr8J/a7a7526547fca6fa20dc591226644d28.jpg", 
