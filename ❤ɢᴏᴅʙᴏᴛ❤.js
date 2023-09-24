@@ -5706,7 +5706,7 @@ case 'payment':{
 if(!quoted) return replygcGOD(`send the screenshot of payment with caption payment successfull after that owner will contact you  if it take more then an hour please contact owner here \n\n owner : https://wa.me/918130784851`)
 let media = await GODincBOT.downloadAndSaveMediaMessage(quoted)
 let name = await fs.unlinkSync(media)
-let buffer = fs.readFileSync(name))
+let buffer = fs.readFileSync(name)
 let teks1 = `PAYMENT REQUEST RECIVED\n\n*BUYER*: @${m.sender.split("@")[0]}`
 await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : buffer , caption: teks1, })
 }
