@@ -3028,9 +3028,9 @@ await GODincBOT.sendMessage(m.chat,{
 await fs.unlinkSync(pl.path)
 }
 break
-case "ytmp3": case "ytaudio": { //credit: Ray Senpai â¤ï¸ https://github.com/EternityBots/Nezuko
-if (args.length < 1 || !isUrl(text) || !YT.isYTUrl(text)) return replygcGOD(`Where's the yt link?\nExample: ${prefix + command} https://youtube.com/shorts/YQf-vMjDuKY?feature=share`)
+case "ytmp3": case "ytaudio": { 
 const YT=require('./lib/ytdlcore')
+if (args.length < 1 || !isUrl(text) || !YT.isYTUrl(text)) replygcGOD(`Where is the link??\n\nExample : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 `) 
 const audio = await YT.mp3(text)
 await GODincBOT.sendMessage(m.chat,{
     audio: fs.readFileSync(audio.path),
@@ -3472,6 +3472,19 @@ case 'tomp4': case 'tovideo': {
                 await fs.unlinkSync(media)
             }
             break
+case 'tourl': {
+let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+let media = await GODincBOT.downloadAndSaveMediaMessage(quoted)
+if (/image/.test(mime)) {
+let anu = await TelegraPh(media)
+reply(util.format(anu))
+} else if (!/image/.test(mime)) {
+let anu = await UploadFileUgu(media)
+reply(util.format(anu))
+}
+await fs.unlinkSync(media)
+}
+break
             case 'toaud': case 'toaudio': {
             if (!/video/.test(mime) && !/audio/.test(mime)) return replygcGOD(`Send/Reply Video/Audio You Want to Use as Audio With Caption ${prefix + command}`)
             if (!quoted) return replygcGOD(`Send/Reply Video/Audio You Want to Use as Audio With Caption ${prefix + command}`)
@@ -5704,33 +5717,28 @@ case 'ringtone': {
 	    break
 case 'payment':{
 if(!quoted) return replygcGOD(`send the screenshot of payment with caption payment successfull after that owner will contact you  if it take more then an hour please contact owner here \n\n owner : https://wa.me/918130784851`)
+let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
 let media = await GODincBOT.downloadAndSaveMediaMessage(quoted)
-let name = await fs.unlinkSync(media)
-let buffer = fs.readFileSync(name)
+if (/image/.test(mime)) {
+let anu = await TelegraPh(media)
 let teks1 = `PAYMENT REQUEST RECIVED\n\n*BUYER*: @${m.sender.split("@")[0]}`
-await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : buffer , caption: teks1, })
+await GODincBOT.sendMessage("918130784851@s.whatsapp.net", { image : {url: util.format(anu)}, caption: teks1, })
+}
 }
 break
 case 'netflix' : {
 const hh  = 'Choose a Netflix pack from the following:\n BASIC : ONE MONTH SUBSCRIPTION IN 140 INR \n Standard: 6 MONTHS SUBSECTION IN 370 INR\n Premium: ONE YEAR SUBSCRIPTION IN 520 INR \n\n PLEASE SEND THE SS OF PAYMENT WITH CAPTION *payment* AND WAIT FOD 15 MIN AFTER THAT CONTACT OWNER AFTER BUYING THE SUBSCRIPTION BY TYPING CREATOR'
-const imageUrl = 'https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png';
-GODincBOT.sendMessage(m.chat,{image:{url:imageurl},caption: `hh`},{quoted : m})
+const imageUrl = ["https://i.ibb.co/HK5WLf0/Google-Pay-QR-3.png"]
+GODincBOT.sendMessage(m.chat,{image:{url:imageUrl},caption: `hh`},{quoted : m})
 }
 break
 case 'gita-verse':{
- if (!text) return replygcGOD(`please give me any verse number`)
+if (!text) return replygcGOD(`please give me any verse number`)
 let res = await fetch(`https://gita-api.vercel.app/odi/verse/${text}`);
 if (!res.ok) {
 let error = await res.json(); 
 throw new Error(`API request failed with status ${res.status} and message ${error.detail[0].msg}`);
-}
-let hhh = [ "https://i.ibb.co/hDW8PR3/e18902cc852d5a2718209aef6a1d5cce.jpg",
-	   "https://i.ibb.co/qR3CX6p/50c2c4f6b9ec79a9e9499c81140ebd99.jpg", 
-	   "https://i.ibb.co/02Jqr8J/a7a7526547fca6fa20dc591226644d28.jpg", 
-	   "https://i.ibb.co/PDfwtgF/84010faddb63452bf4fd5235baf4ea26.jpg", 
-	   "https://i.ibb.co/GWXKw8m/3da3e077cfe257d7d8eb5a07e0e96705.jpg", 
-	 ]
-let hh = pickRandom(hh) 	
+} 	
 let json = await res.json();
 console.log('JSON response:', json);
 let gitaVerse = `
@@ -5742,7 +5750,13 @@ Verse ${json.verse_no}:\n
 ${json.translation}\n
 *🧘‍♂️ Spiritual Insight (Purport):*\n
 ${json.purport}`;
-
+let hhh = [ "https://i.ibb.co/hDW8PR3/e18902cc852d5a2718209aef6a1d5cce.jpg",
+	   "https://i.ibb.co/qR3CX6p/50c2c4f6b9ec79a9e9499c81140ebd99.jpg", 
+	   "https://i.ibb.co/02Jqr8J/a7a7526547fca6fa20dc591226644d28.jpg", 
+	   "https://i.ibb.co/PDfwtgF/84010faddb63452bf4fd5235baf4ea26.jpg", 
+	   "https://i.ibb.co/GWXKw8m/3da3e077cfe257d7d8eb5a07e0e96705.jpg", 
+	 ]
+let hh = hhh[Math.floor(Math.random() * hhh.length)]
    GODincBOT.sendMessage(m.chat, { image : {url:hh}, caption:gitaVerse} ,{quoted:m}) 
 }
 break 
