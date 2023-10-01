@@ -1488,6 +1488,10 @@ displayName: `${list.length} Contact`,
 contacts: list }, mentions: [sender] }, { quoted: m })
 } 
 break
+case 'creator': {
+GodBotInc.sendMessage(jid, { contacts: { displayName: `NEXUS`, contacts: payowner }} ,{quoted : m})
+} 
+break
 case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 	    let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
@@ -1525,6 +1529,7 @@ case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
 │❏.ɢʀᴏᴜᴘᴍᴇɴᴜ
 │❏.ᴏᴡɴᴇʀᴍᴇɴᴜ
 │❏.ᴘʀᴇᴍɪᴜᴍᴍᴇɴᴜ
+│❏.subscribemenu
 ╰─────────╾༻
 ╭──────༺♡༻──────╮
 │❏.ᴅᴏᴡɴʟᴏᴀᴅᴍᴇɴᴜ
@@ -1812,9 +1817,25 @@ GODincBOT.sendMessage(from, {text: `Here @${teman.split("@")[0]}`, mentions: [te
 }
 break
 case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
-me = m.sender
-const teks = `*「  ${global.botname} Script 」*\n\nYouTube: ${global.websitex}\nGitHub: ${global.botscript}\n\nHi @${me.split('@')[0]} 👋\n `
-GODincBOT.sendMessage(m.chat, {video:log0 ,caption: teks ,mentions: [me],}, {quoted: m,})
+const me = m.sender
+const githubRepoURL = 'https://github.com/NEXUSAT12/GOD-BOT1';
+const teks = `*「 GOD-BOT V1 Script 」*\n\nWebsite: 'https://linktr.ee/Nexus_21' \nGitHub: 'https://github.com/NEXUSTAT12/GOD-BOT1/' \n\nHi @${me.split('@')[0]} 👋\n `
+try {
+const [username, repoName] = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
+const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}`);
+const repoData = response.data;
+const formattedInfo = `
+📂 Repository Name: ${repoData.name}
+📝 Description: ${repoData.description}
+👤 Owner: ${repoData.owner.login}
+⭐ Stars: ${repoData.stargazers_count}
+🍴 Forks: ${repoData.forks_count}
+🌐 URL: ${repoData.html_url}
+      `.trim();
+GODincBOT.sendMessage(m.chat, {video:log0 ,caption: formattedInfo ,mentions: [me],}, {quoted: m})
+} else {
+	GOincBOT.sendMessage(m.chat , {video:log0,caption :teks ,mentions: [me]},{quoted:m})
+}
 }
 break
 case 'request': case 'reportbug': {
@@ -1887,6 +1908,28 @@ Id : ${q.split("|")[0]}
 ID Zone: ${q.split("|")[1]}`)
 }
 break
+case 'toanime'{
+const uploadImage = require('/lib/uploadImage.js')	
+if (!q) return replygcGOD(`Example send an image with caption ${prefix+command}`)
+let q = m.quoted ? m.quoted : m
+let mime = (q.msg || q).mimetype || q.mediaType || ""
+if (!/image/g.test(mime)) throw '*Respond to a image*'
+m.reply('*This command can turn your photo into anime*')    
+let data = await GODincBOT.downloadAndSaveMediaMessage(q)
+let image = await uploadImage(data)
+try {
+let anime = `https://api.lolhuman.xyz/api/imagetoanime?apikey=adcff9bb93b568e58eda9e39&img=${image}`
+await GODincBOT.sendMessage(m.chat,{image: anime,caption:'here you go'},{quoted:m})
+} catch (err) {
+try {
+let anime2 = `https://api.zahwazein.xyz/photoeditor/jadianime?url=${image}&apikey=zenzkey_8cea023d468c`
+await GODincBOT.sendMessage(m.chat,{image: anime2,caption:'here you go'},{quoted:m})
+} catch (err) {    
+try{    
+let anime3 = `https://api.caliph.biz.id/api/animeai?img=${image}&apikey=caliphkey`
+await GODincBOT.sendMessage(m.chat,{image: anime3,caption:'here you go'},{quoted:m})
+}
+break
 case 'npmstalk':{
 if (!q) return replygcGOD(`Example ${prefix+command} GODapi`)
 GODStickWait()
@@ -1909,7 +1952,6 @@ GODStickWait()
 aj = await githubstalk.githubstalk(`${q}`)
 GODincBOT.sendMessage(m.chat, { image: { url : aj.profile_pic }, caption: 
 `*/ Github Stalker \\*
-
 Username : ${aj.username}
 Nickname : ${aj.nickname}
 Bio : ${aj.bio}
