@@ -248,7 +248,7 @@ Godgreet = await getBuffer(ppuser)
    │✑ ${xtime} ${xdate}
    └───────────────┈༺⟬☤⟭༻\n\n\n ${metadata.desc}`
 let buttonMessage = {
-    image: Godgreet,
+    image: {url:`https://api.lolhuman.xyz/api/base/welcome?apikey=adcff9bb93b568e58eda9e39&img1=${Godgreet}&img2=${Godgreet}&background=https://i.ibb.co/8B6Q84n/LTqHsfYS.jpg&username=${GodName}=10&groupname=${metadata.subject}`},
     mentions: [num],
     caption: Godbody,
     footer: `${global.botname}`,
