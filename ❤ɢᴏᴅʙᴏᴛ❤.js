@@ -1688,6 +1688,7 @@ case 'sound48':
 case 'sound49':
 case 'sound50':
 case 'sound51':
+		
 case 'sound52':
 case 'sound53':
 case 'sound54':
@@ -1818,11 +1819,9 @@ GODincBOT.sendMessage(from, {text: `Here @${teman.split("@")[0]}`, mentions: [te
 break
 case 'sc': case 'script': case 'donate': case 'donate': case 'cekupdate': case 'updatebot': case 'cekbot': case 'sourcecode': {
 const me = m.sender
-const githubRepoURL = 'https://github.com/NEXUSAT12/GOD-BOT1';
 const teks = `*「 GOD-BOT V1 Script 」*\n\nWebsite: 'https://linktr.ee/Nexus_21' \nGitHub: 'https://github.com/NEXUSTAT12/GOD-BOT1/' \n\nHi @${me.split('@')[0]} 👋\n `
 try {
-const [username, repoName] = githubRepoURL.match(/github\.com\/([^/]+)\/([^/]+)/);
-const response = await axios.get(`https://api.github.com/repos/${username}/${repoName}`);
+const response = await axios.get(`https://api.github.com/repos/NEXUSAT12/GOD-BOT1`);
 const repoData = response.data;
 const formattedInfo = `
 📂 Repository Name: ${repoData.name}
@@ -1831,10 +1830,11 @@ const formattedInfo = `
 ⭐ Stars: ${repoData.stargazers_count}
 🍴 Forks: ${repoData.forks_count}
 🌐 URL: ${repoData.html_url}
+😎 FORK URL :${repoData.forks_url}
       `.trim();
 GODincBOT.sendMessage(m.chat, {video:log0 ,caption: formattedInfo ,mentions: [me],}, {quoted: m})
 }catch(err) {
-	GOincBOT.sendMessage(m.chat , {video:log0,caption :teks ,mentions: [me]},{quoted:m})
+	GODincBOT.sendMessage(m.chat , {video:log0,caption :teks ,mentions: [me]},{quoted:m})
 }
 }
 break
@@ -1910,7 +1910,7 @@ ID Zone: ${q.split("|")[1]}`)
 break
 case 'toanime':{
 if (!quoted) return replygcGOD(`please send an image with caption toanime`)
-const uploadImage = require('/lib/uploadImage.js')	  
+const uploadImage = require('./lib/uploadImage.js')	  
 let data = await GODincBOT.downloadAndSaveMediaMessage(quoted)
 let image = await uploadImage(data)
 let anime1 = `https://api.lolhuman.xyz/api/imagetoanime?apikey=adcff9bb93b568e58eda9e39&img=${image}`
