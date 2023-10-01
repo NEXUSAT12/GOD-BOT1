@@ -1833,7 +1833,7 @@ const formattedInfo = `
 🌐 URL: ${repoData.html_url}
       `.trim();
 GODincBOT.sendMessage(m.chat, {video:log0 ,caption: formattedInfo ,mentions: [me],}, {quoted: m})
-} else {
+} catch(err) {
 	GOincBOT.sendMessage(m.chat , {video:log0,caption :teks ,mentions: [me]},{quoted:m})
 }
 }
