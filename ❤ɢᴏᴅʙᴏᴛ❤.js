@@ -1833,7 +1833,7 @@ const formattedInfo = `
 🌐 URL: ${repoData.html_url}
       `.trim();
 GODincBOT.sendMessage(m.chat, {video:log0 ,caption: formattedInfo ,mentions: [me],}, {quoted: m})
-} catch(err) {
+}catch(err) {
 	GOincBOT.sendMessage(m.chat , {video:log0,caption :teks ,mentions: [me]},{quoted:m})
 }
 }
@@ -1909,21 +1909,13 @@ ID Zone: ${q.split("|")[1]}`)
 }
 break
 case 'toanime':{
-const uploadImage = require('/lib/uploadImage.js')	
-if (!q) return replygcGOD(`Example send an image with caption ${prefix+command}`)
-let q = m.quoted ? m.quoted : m
-let mime = (q.msg || q).mimetype || q.mediaType || ""
-if (!/image/g.test(mime)) throw '*Respond to a image*'
-m.reply('*This command can turn your photo into anime*')    
-let data = await GODincBOT.downloadAndSaveMediaMessage(q)
+if (!quoted) return replygcGOD(`please send an image with caption toanime`)
+const uploadImage = require('/lib/uploadImage.js')	  
+let data = await GODincBOT.downloadAndSaveMediaMessage(quoted)
 let image = await uploadImage(data)
-try {
-let anime = `https://api.lolhuman.xyz/api/imagetoanime?apikey=adcff9bb93b568e58eda9e39&img=${image}`
-await GODincBOT.sendMessage(m.chat,{image: anime,caption:'here you go'},{quoted:m})
-}catch (err)=>{
-let anime2 = `https://api.zahwazein.xyz/photoeditor/jadianime?url=${image}&apikey=zenzkey_8cea023d468c`
-await GODincBOT.sendMessage(m.chat,{image: anime2,caption:'here you go'},{quoted:m})
-}
+let anime1 = `https://api.lolhuman.xyz/api/imagetoanime?apikey=adcff9bb93b568e58eda9e39&img=${image}`
+const anime = fetch(anime1)
+GODincBOT.sendMessage(m.chat,{image: anime,caption:'here you go'},{quoted:m})
 }
 break
 case 'npmstalk':{
