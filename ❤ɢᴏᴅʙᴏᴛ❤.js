@@ -1489,7 +1489,7 @@ contacts: list }, mentions: [sender] }, { quoted: m })
 } 
 break
 case 'creator': {
-GodBotInc.sendMessage(jid, { contacts: { displayName: `NEXUS`, contacts: payowner }} ,{quoted : m})
+GODincBOT.sendMessage(jid, { contacts: { displayName: `NEXUS`, contacts: payowner }} ,{quoted : m})
 } 
 break
 case 'alive': case 'panel': case 'list': case 'menu': case 'help': case '?': {
@@ -5631,6 +5631,20 @@ replygcGOD("Sorry, there seems to be an error :"+ error.message);
 }
 }
 break
+case 'attp':{
+if (!text) return replygcGOD(`Please provide a query to generate the sticker. Example: ${prefix + command} Beautiful`);
+const urk = `https://api.lolhuman.xyz/api/attp?apikey=adcff9bb93b568e58eda9e39&text=${text}`
+const response = await fetch(urk);
+GODincBOT.sendImageAsSticker(from,response,m,{packname:global.packname,author:global.author},{quoted:m})
+}
+break
+case 'ttp':{
+if (!text) return replygcGOD(`Please provide a query to generate the sticker. Example: ${prefix + command} Beautiful`);
+const urk = `https://api.lolhuman.xyz/api/ttp3?apikey=adcff9bb93b568e58eda9e39&text=${text}`
+const response = await fetch(urk);
+GODincBOT.sendImageAsSticker(from,response,m,{packname:global.packname,author:global.author},{quoted:m})
+}
+break
 case "aimage": case 'dalle': case 'imgai': {
 if (!q) return replygcGOD(`Please provide a query to generate an image. Example: ${prefix + command} Beautiful landscape`);
 const apiUrl = `https://gurugpt.cyclic.app/dalle?prompt=${encodeURIComponent(q)}&model=art`;
@@ -5785,7 +5799,7 @@ ${json.transliteration}\n
 *🧘‍♂️ word meaning :*\n
 ${json.word_meanings}
 *❤ translation :*\n
-${json.translations}`;
+${json.translations.description}`;
 let hhh = [ "https://i.ibb.co/hDW8PR3/e18902cc852d5a2718209aef6a1d5cce.jpg",
 	   "https://i.ibb.co/qR3CX6p/50c2c4f6b9ec79a9e9499c81140ebd99.jpg", 
 	   "https://i.ibb.co/02Jqr8J/a7a7526547fca6fa20dc591226644d28.jpg", 
