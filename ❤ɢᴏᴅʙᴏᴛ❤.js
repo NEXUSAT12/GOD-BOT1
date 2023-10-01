@@ -1908,7 +1908,7 @@ Id : ${q.split("|")[0]}
 ID Zone: ${q.split("|")[1]}`)
 }
 break
-case 'toanime'{
+case 'toanime':{
 const uploadImage = require('/lib/uploadImage.js')	
 if (!q) return replygcGOD(`Example send an image with caption ${prefix+command}`)
 let q = m.quoted ? m.quoted : m
@@ -1920,14 +1920,10 @@ let image = await uploadImage(data)
 try {
 let anime = `https://api.lolhuman.xyz/api/imagetoanime?apikey=adcff9bb93b568e58eda9e39&img=${image}`
 await GODincBOT.sendMessage(m.chat,{image: anime,caption:'here you go'},{quoted:m})
-} catch (err) {
-try {
+}catch (err)=>{
 let anime2 = `https://api.zahwazein.xyz/photoeditor/jadianime?url=${image}&apikey=zenzkey_8cea023d468c`
 await GODincBOT.sendMessage(m.chat,{image: anime2,caption:'here you go'},{quoted:m})
-} catch (err) {    
-try{    
-let anime3 = `https://api.caliph.biz.id/api/animeai?img=${image}&apikey=caliphkey`
-await GODincBOT.sendMessage(m.chat,{image: anime3,caption:'here you go'},{quoted:m})
+}
 }
 break
 case 'npmstalk':{
