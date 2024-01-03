@@ -66,6 +66,11 @@ CHANGE SESSION  [HERE](./session/creds.json)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/NEXUSAT12/GOD-BOT1/)
 
+--------
+<a href="https://render.com/deploy?repo=https://github.com/NEXUSAT12/GOD-BOT1/">
+<img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" />
+</a>
+
 # Install Manually 👇
 ## `Requirements`
 * [Node.js](https://nodejs.org/en/)
